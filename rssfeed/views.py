@@ -41,7 +41,7 @@ def articles_list(request):
         rows = paginator.page(paginator.num_pages)
         vid = video_paginator.page(video_paginator.num_pages)
 
-    context = {'rows' : rows, 'vid':vid}
+    context = {'rows' : rows}
     return render (request, 'rssfeed/articles_list.html' , context)
 
 @cache_page(CACHE_TTL)
