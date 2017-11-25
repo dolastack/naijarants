@@ -47,7 +47,7 @@ def get_latest_article(sender,  **kwargs):
         redis.lpush('articles', article.article_id )
 
 #post save signal connect
-post_save.connect(get_latest_article, sender=Article)
+#post_save.connect(get_latest_article, sender=Article)
 
 @periodic_task(run_every=(crontab( minute="*/18")))
 def post_to_facebook():
@@ -80,7 +80,7 @@ def feed_update():
 
 def save_article(dfeedData, dfeed):
     """ get articles from feeds and save article to database"""
-    #timezone = pytz.timezone("America/New_York")
+
     for entry in dfeedData.entries:
         article = Article()
         article.title = entry.title
