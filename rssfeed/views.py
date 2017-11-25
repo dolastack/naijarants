@@ -12,14 +12,14 @@ from django.core.cache.backends.base import DEFAULT_TIMEOUT
 from django.views.decorators.cache import cache_page
 from django.conf import settings
 #from rssfeed.settings import display_list
-from clips.views import get_videos
+
 
 
 CACHE_TTL = getattr(settings, 'CACHE_TTL', DEFAULT_TIMEOUT)
 display_list = getattr(settings, 'DISPLAY_LIST')
 
 
-@cache_page(CACHE_TTL)
+#@cache_page(CACHE_TTL)
 def articles_list(request):
 
     display_list = Article.objects.articles_after(days=10)
@@ -28,18 +28,18 @@ def articles_list(request):
 
     paginator = Paginator(rowsd, 20)
     page = request.GET.get('page')
-    videos = get_videos()
-    video_paginator = Paginator(videos, 10)
+
+
     try:
         rows = paginator.page(page)
-        vid = video_paginator.page(page)
+
     except PageNotAnInteger:
         rows = paginator.page(1)
-        vid = video_paginator.page(1)
+
 
     except EmptyPage:
         rows = paginator.page(paginator.num_pages)
-        vid = video_paginator.page(video_paginator.num_pages)
+
 
     context = {'rows' : rows}
     return render (request, 'rssfeed/articles_list.html' , context)
