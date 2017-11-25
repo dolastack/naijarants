@@ -13,6 +13,7 @@ from django.views.decorators.cache import cache_page
 from django.conf import settings
 #from rssfeed.settings import display_list
 
+from rants.views import rants_list
 
 CACHE_TTL = getattr(settings, 'CACHE_TTL', DEFAULT_TIMEOUT)
 
@@ -37,8 +38,8 @@ def articles_list(request):
     except EmptyPage:
         rows = paginator.page(paginator.num_pages)
 
-
-    context = {'rows' : rows}
+    rants = rants_list(request)
+    context = {'rows' : rows, 'rants': rants}
     return render (request, 'rssfeed/articles_list.html' , context)
 
 @cache_page(CACHE_TTL)
