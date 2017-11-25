@@ -42,7 +42,7 @@ def articles_list(request):
         vid = video_paginator.page(video_paginator.num_pages)
 
     context = {'rows' : rows, 'vid':vid}
-    return render (request, 'news/articles_list.html' , context)
+    return render (request, 'rssfeed/articles_list.html' , context)
 
 @cache_page(CACHE_TTL)
 def feeds_list(request):
