@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 
+{% for articles in rows  %}
 
-      {% for entry in rows %}
+      {% for entry in articles %}
         <h2>{{entry.title}}</h2>
         <p>{{ entry.description | safe }}</p>
         <p>
@@ -10,6 +11,6 @@
         </p>
       {% endfor %}
 
-
+{% endfor %}
 
 {% endblock %}

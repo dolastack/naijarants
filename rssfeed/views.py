@@ -14,10 +14,7 @@ from django.conf import settings
 #from rssfeed.settings import display_list
 
 
-
 CACHE_TTL = getattr(settings, 'CACHE_TTL', DEFAULT_TIMEOUT)
-#display_list = getattr(settings, 'DISPLAY_LIST')
-
 
 #@cache_page(CACHE_TTL)
 def articles_list(request):
