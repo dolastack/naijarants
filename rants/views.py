@@ -11,5 +11,4 @@ def rants_list(request):
 def rant_detail(request, rant):
     context = {'rant': rant}
     template = "rants/rant_detail.html"
-    #assert (False)
     return render(request, template, context)
