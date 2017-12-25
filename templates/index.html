@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>Naija Rants</title>
+    <title>Rants</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
@@ -63,7 +63,7 @@
               <!--h1 class="display-3">Naija Rants</h1-->
               <h2>Vent out the issues weighing on your mind.</h2>
               <h2>Your identity is hidden</h2>
-              <button type="button" class="btn btn-primary btn-lg">Click to Rant!</button>
+              <a href="{% url 'rant_new_rant' %}" target="_blank" class="btn btn-primary"> Create a Rant! </a>
             </div>
           </div>
           {% for rant in rants  %}

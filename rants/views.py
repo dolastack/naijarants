@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Rant
+from .forms import RantForm
 # Create your views here.
 
 def rants_list(request):
@@ -13,3 +14,10 @@ def rant_detail(request, rant):
     context = {'rant': rant}
     template = "rants/rant_detail.html"
     return render(request, template, context)
+
+def new_rant(request):
+    if request.method == "POST":
+        pass
+    else:
+        form = RantForm()
+    return render(request, "rants/new_rant.html", {'form': form})

@@ -6,9 +6,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
-
-    <title>Naija Rants</title>
-
+    <title>
+      {% block title %}
+      {% endblock title %}
+    </title>
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 
@@ -52,50 +53,9 @@
     <main role="main">
       <div class="container pt-5">
 
-        <!-- Example row of columns -->
-        <div class="row">
-
-        <div class="col-xs-12 col-md-8">
-        <div class="row">
-          <!-- Main jumbotron for a primary marketing message or call to action -->
-          <div class="jumbotron bg-danger">
-            <div class="container">
-              <!--h1 class="display-3">Naija Rants</h1-->
-              <h2>Vent out the issues weighing on your mind.</h2>
-              <h2>Your identity is hidden</h2>
-              <button type="button" class="btn btn-primary btn-lg">Click to Rant!</button>
-            </div>
-          </div>
-          {% for rant in rants  %}
-            <div class="col-md-6">
-                <h3>{{rant.title}} </h3>
-                <p>{{ rant.body }}</p>
-                <p>
-
-                  <a href="{% url 'rant_detail' rant %}" target="_blank" class="btn btn-primary">Rant Details</a>
-                </p>
-           </div>
-          {% endfor %}
-          </div> <!-- col8 row -->
-        </div> <!-- col-xs-12 col-sm-8 -->
-
-
-        <div class="col-md-4">
-          <div class="card" >
-            <div class="card-header  text-white bg-primary">
-              <h2>News Articles</h2></div>
-
-            {% autoescape off %}
-              {% block content %}
-              {% endblock content %}
-            {% endautoescape %}
-          </div>
-
-        </div>
-      </div> <!-- Biggest row -->
-        <hr>
-
-      </div> <!-- /container -->
+        {% block content %}
+        {% endblock content %}
+     </div> <!-- /container -->
 
     </main>
 
