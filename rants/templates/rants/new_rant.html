@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content_title %}
+  New Rant
+{% endblock content_title %}
+
+{% block content %}
+
+<form method="post" action="{% url 'rants_new_rant' %}">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" class="btn-primary">Create Rant</button>
+
+</form>
+
+{% endblock content %}
