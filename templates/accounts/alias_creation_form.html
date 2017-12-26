@@ -5,7 +5,7 @@
 {% endblock content_title %}
 
 {% block content %}
-
+<div class="container-fluid pt-5">
 <form method="post" action="{% url 'accounts_new_alias' %}" class="font-weight-bold align-text-top">
   {% csrf_token %}
   {{ form.as_p }}
@@ -13,4 +13,5 @@
 
 </form>
 
+</div>
 {% endblock content %}
