@@ -8,11 +8,17 @@ class RantQuerySet(models.QuerySet):
     def top_rants():
         pass
 
+CATIGORIES = (
+    ('E', 'Everyday Living'), ('P', 'Politics'),
+    ('G','Religion'), ('R', 'Relationship'),
+     ('S','Sex'), ('O', 'Other')
+)
 class Rant(models.Model):
     title = models.CharField(max_length=100)
     body = models.TextField()
     time_created = models.DateTimeField(auto_now=True)
     created_by = models.ForeignKey(User , null=True, blank=True)
+    category = models.CharField(max_length=1, choices=CATIGORIES, default='Everyday Living')
     objects = RantQuerySet.as_manager()
 
     def __str__(self):

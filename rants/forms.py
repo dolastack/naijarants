@@ -6,4 +6,4 @@ from .models import Rant
 class RantForm(ModelForm):
     class Meta:
         model = Rant
-        fields = ("title", "body",)
+        fields = ("title", "body", "category")

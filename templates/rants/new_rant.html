@@ -5,6 +5,8 @@
 {% endblock content_title %}
 
 {% block content %}
+<div class="container-fluid pt-5">
+
 
 <form method="post" action="{% url 'rants_new_rant' %}">
   {% csrf_token %}
@@ -13,4 +15,5 @@
 
 </form>
 
+</div>
 {% endblock content %}
