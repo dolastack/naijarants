@@ -30,7 +30,7 @@
             <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Create Alias</a>
+            <a class="nav-link" href="{% url 'accounts_new_alias' %}">Create Alias</a>
           </li>
 
           <li class="nav-item dropdown">
@@ -71,7 +71,7 @@
                 <h3>{{rant.title}} </h3>
                 <p>{{ rant.body }}</p>
                 <p>
-                  <a href="{% url 'rant_detail' rant %}" target="_blank" class="btn btn-primary">Rant Details</a>
+                  <a href="{% url 'rant_detail' rant_title=rant.title %}" target="_blank" class="btn btn-primary">Rant Details</a>
                 </p>
            </div>
           {% endfor %}

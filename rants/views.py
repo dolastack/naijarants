@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Rant
 from .forms import RantForm
 # Create your views here.
@@ -9,9 +9,11 @@ def rants_list(request):
     #template = "base.html"
     return rants
 
-def rant_detail(request, drant):
-    print(drant.title)
-    Rant.objects.rant(drant.title)
+
+
+def rant_detail(request, rant_title):
+    rant = get_object_or_404(Rant, title=rant_title)
+
     context = {'rant': rant}
     template = "rants/rant_detail.html"
     return render(request, template, context)

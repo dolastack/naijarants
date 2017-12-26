@@ -19,6 +19,7 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^rant/', include('rants.urls')),
+    url(r'^account/', include('accounts.urls')),
     url(r'^', include('rssfeed.urls')),
 
 ]
