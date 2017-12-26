@@ -6,7 +6,7 @@
 
 {% block content %}
 
-<form method="post" action="{% url 'accounts_new_alias' %}">
+<form method="post" action="{% url 'accounts_new_alias' %}" class="font-weight-bold align-text-top">
   {% csrf_token %}
   {{ form.as_p }}
   <button type="submit" class="btn-primary">Create Alias</button>
