@@ -23,7 +23,7 @@ def new_rant(request):
         form = RantForm(instance=rant, data=request.POST)
         if form.is_valid():
             form.save()
-            return redirect('index')
+            return redirect('accounts_user_home')
     else:
         form = RantForm()
         return render(request, "rants/new_rant.html", {'form': form})
