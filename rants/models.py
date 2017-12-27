@@ -14,6 +14,7 @@ CATIGORIES = (
     ('G','Religion'), ('R', 'Relationship'),
      ('S','Sex'), ('O', 'Other')
 )
+
 class Rant(models.Model):
     title = models.CharField(max_length=100)
     body = models.TextField()
@@ -26,3 +27,8 @@ class Rant(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Comment(models.Model):
+    rant = models.ForeignKey(Rant)
+    

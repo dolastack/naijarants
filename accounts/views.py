@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import AliasForm
+from rants.models import Rant
 # Create your views here.
 
 def create_alias(request):
@@ -13,3 +14,16 @@ def create_alias(request):
     else:
         form = AliasForm()
         return render(request, 'accounts/alias_creation_form.html', {'form': form} )
+
+def accounts_user_home(request):
+    rants = Rant.objects.all()
+    user = request.user
+    context = {'rants': rants, 'user': user }
+
+    return render(request, 'accounts/user_home.html' , context )
+"""
+def home(request):
+    if is_authenticated:
+        redirect(accounts_user_home)
+    else
+"""

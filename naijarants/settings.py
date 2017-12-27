@@ -126,7 +126,7 @@ STATICFILES_DIRS = [
     ]
 from django.core.urlresolvers import reverse_lazy
 
-LOGIN_REDIRECT_URL = reverse_lazy('index')
+LOGIN_REDIRECT_URL = reverse_lazy('accounts_user_home')
 LOGOUT_REDIRECT_URL = reverse_lazy('index')
 #from django.contrib.auth.models import AnonymousUser
 #anonymous_user = AnonymousUser()

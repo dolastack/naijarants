@@ -27,8 +27,9 @@
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto mb-0">
           <li class="nav-item active">
-            <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href={% if user.is_authenticated %} "{% url 'accounts_user_home' %}" {% else %} "{% url 'index' %}" {% endif %} >Home <span class="sr-only">(current)</span></a>
           </li>
+
           <li class="nav-item">
             <a class="nav-link" href="{% url 'accounts_new_alias' %}">Create Alias</a>
           </li>
@@ -41,13 +42,19 @@
               <a class="dropdown-item" href="#">Relationships</a>
             </div>
           </li>
-
+          {% if user.is_authenticated %}
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'accounts_login' %}">Login</a>
+            <a class="nav-link" href="#">Hello {{ user }}</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'accounts_logout' %}">Logout</a>
           </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'accounts_login' %}">Login</a>
+          </li>
+
+          {% endif %}
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">

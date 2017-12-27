@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content_title %}
+  "Naija Rants"
+{% endblock content_title %}
+
+
+{% block index_content %}
+        <!-- Example row of columns -->
+        <div class="row">
+
+        <div class="col-xs-12 col-md-8">
+
+        <div class="row">
+
+
+          {% for rant in rants  %}
+            <div class="col-md-6">
+                <h3>{{rant.title}} </h3>
+                <p>{{ rant.body }}</p>
+                <p>
+                  <a href="{% url 'rant_detail' rant_title=rant.title %}" class="btn btn-primary">Full Details</a>
+                </p>
+           </div>
+          {% endfor %}
+          </div> <!-- col8 row -->
+
+        </div> <!-- col-xs-12 col-sm-8 -->
+
+
+        <div class="col-md-4">
+          <div class="card" >
+            <div class="card-header  text-white bg-primary">
+              <h2>Top Rants</h2>
+            </div>
+
+            {% autoescape off %}
+              {% block content %}
+              {% endblock content %}
+            {% endautoescape %}
+          </div>
+
+        </div>
+
+      </div> <!-- Biggest row -->
+
+
+{% endblock index_content %}
