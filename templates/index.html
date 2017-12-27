@@ -20,15 +20,13 @@
               <a href="{% url 'accounts_login' %}"  class="btn btn-primary">Login </a>
                to
               <a href="{% url 'rants_new_rant' %}" class="btn btn-primary">Create a Rant! </a>
-
-
             </div>
           </div>
 
           {% for rant in rants  %}
             <div class="col-md-6">
                 <h3>{{rant.title}} </h3>
-                <p>{{ rant.body }}</p>
+                <p>{{ rant.body  | slice:":200" }}</p>
                 <p>
                   <a href="{% url 'rant_detail' rant_title=rant.title %}" class="btn btn-primary">Full Details</a>
                 </p>

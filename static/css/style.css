@@ -39,3 +39,9 @@ a:active {
     background-color: transparent;
     text-decoration: underline;
 }
+
+div {
+  width: auto;
+  word-break: break-all;
+  white-space: normal;
+}
