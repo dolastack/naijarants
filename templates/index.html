@@ -5,8 +5,7 @@
 
 
 {% block index_content %}
-    <div class="container-fluid pt-3">
-      <!-- Example row of columns -->
+        <!-- Example row of columns -->
         <div class="row">
 
         <div class="col-xs-12 col-md-8">
@@ -18,7 +17,11 @@
               <!--h1 class="display-3">Naija Rants</h1-->
               <h3>Vent out the issues weighing on your mind.</h3>
               <h3>Your identity is hidden</h3>
+              <a href="{% url 'accounts_login' %}" target="_blank" class="btn btn-primary"> Login </a>
+               to 
               <a href="{% url 'rants_new_rant' %}" target="_blank" class="btn btn-primary"> Create a Rant! </a>
+
+
             </div>
           </div>
 
@@ -49,7 +52,7 @@
           </div>
 
         </div>
-      </div>  
+
       </div> <!-- Biggest row -->
 
 

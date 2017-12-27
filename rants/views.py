@@ -13,7 +13,6 @@ def rants_list(request):
 
 def rant_detail(request, rant_title):
     rant = get_object_or_404(Rant, title=rant_title)
-
     context = {'rant': rant}
     template = "rants/rant_detail.html"
     return render(request, template, context)
