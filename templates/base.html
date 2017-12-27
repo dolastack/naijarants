@@ -53,8 +53,13 @@
     <main role="main">
       <div class="container pt-5"> <!-- main container -->
 
+        {% block index_content %}
+        {% endblock index_content %}
+        
         {% block content %}
         {% endblock content %}
+
+
 
       </div> <!-- main container end -->
     </main>
