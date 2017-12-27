@@ -21,6 +21,8 @@ class Rant(models.Model):
     created_by = models.ForeignKey(User , null=True, blank=True)
     category = models.CharField(max_length=1, choices=CATIGORIES, default='Everyday Living')
     objects = RantQuerySet.as_manager()
+    class Meta:
+        ordering = ['-time_created']
 
     def __str__(self):
         return self.title
