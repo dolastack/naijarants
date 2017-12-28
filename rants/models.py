@@ -19,9 +19,10 @@ class Rant(models.Model):
     title = models.CharField(max_length=100)
     body = models.TextField(max_length=400)
     time_created = models.DateTimeField(auto_now=True)
-    created_by = models.ForeignKey(User , null=True, blank=True)
+    author = models.ForeignKey(User , null=True, blank=True)
     category = models.CharField(max_length=1, choices=CATIGORIES, default='Everyday Living')
     objects = RantQuerySet.as_manager()
+    updated = models.DateTimeField(auto_now_add=True)
     class Meta:
         ordering = ['-time_created']
 
@@ -30,4 +31,12 @@ class Rant(models.Model):
 
 
 class Comment(models.Model):
-    rant = models.ForeignKey(Rant)
+    name = models.CharField(max_length=80, default="anonymous")
+    rant = models.ForeignKey(Rant, related_name='comments')
+    body = models.TextField(max_length=400)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now_add=True)
+    class Meta:
+        ordering = ['created']
+    def __str__(self):
+        return 'Comment by {} on {}'.format(self.name, self.rant)

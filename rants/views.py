@@ -21,7 +21,7 @@ def rant_detail(request, rant_title):
 @login_required
 def new_rant(request):
     if request.method == "POST":
-        rant = Rant(created_by=request.user)
+        rant = Rant(author=request.user)
         form = RantForm(instance=rant, data=request.POST)
         if form.is_valid():
             form.save()
