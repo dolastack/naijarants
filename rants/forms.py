@@ -9,7 +9,5 @@ class RantForm(ModelForm):
         model = Rant
         fields = ("title", "body", "category")
         labels = { 'body' : _('Rant'),
-                   'title': _('Rant Title')
+                   'title': _('Title')
                    }
-        help_texts = { 'body': _('400 Characters'),
-                      }

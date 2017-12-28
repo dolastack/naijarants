@@ -12,11 +12,11 @@
 
         <div class="row">
           <!-- Main jumbotron for a primary marketing message or call to action -->
-          <div class="jumbotron bg-danger">
+          <div class="jumbotron bg-success" style="width: 100%;">
             <div class="container">
               <!--h1 class="display-3">Naija Rants</h1-->
-              <h3 class="display-4">Tell the world, what is on your mind.</h3>
-              <h4>Without revealing your Identity</h4>
+              <h4>Tell the world, what is on your mind.</h4>
+
               <a href="{% url 'accounts_login' %}"  class="btn btn-primary">Login </a>
                to
               <a href="{% url 'rants_new_rant' %}" class="btn btn-primary">Create a Rant! </a>
@@ -39,8 +39,8 @@
 
         <div class="col-md-4">
           <div class="card" >
-            <div class="card-header  text-white bg-primary">
-              <h2>News Articles</h2>
+            <div class="card-header  text-white bg-primary text-center">
+              <h2>In the News</h2>
             </div>
 
             {% autoescape off %}
