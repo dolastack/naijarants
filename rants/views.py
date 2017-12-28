@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.decorators import login_required
 from .models import Rant
 from .forms import RantForm
+
 # Create your views here.
 
 def rants_list(request):
@@ -16,7 +18,7 @@ def rant_detail(request, rant_title):
     context = {'rant': rant}
     template = "rants/rant_detail.html"
     return render(request, template, context)
-
+@login_required
 def new_rant(request):
     if request.method == "POST":
         rant = Rant(created_by=request.user)
