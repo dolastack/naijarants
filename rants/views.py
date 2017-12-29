@@ -11,17 +11,19 @@ def rants_list(request):
     #template = "base.html"
     return rants
 
-
-
 def rant_detail(request, rant_title):
     rant = get_object_or_404(Rant, title=rant_title)
+    
     context = {'rant': rant}
     template = "rants/rant_detail.html"
     return render(request, template, context)
 @login_required
 def new_rant(request):
     if request.method == "POST":
-        rant = Rant(author=request.user)
+        rant = Rant()
+
+        rant.author=request.user
+
         form = RantForm(instance=rant, data=request.POST)
         if form.is_valid():
             form.save()
