@@ -6,7 +6,7 @@ input {
 }
 
 textarea {
-  
+
     align-self: center;
     box-sizing: border-box;
     border: 2px solid #ccc;
@@ -39,10 +39,4 @@ a:active {
     color: yellow;
     background-color: transparent;
     text-decoration: underline;
-}
-
-div {
-  width: auto;
-  word-break: break-all;
-  white-space: normal;
 }

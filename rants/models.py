@@ -17,7 +17,7 @@ CATIGORIES = (
 
 class Rant(models.Model):
     title = models.CharField(max_length=100)
-    body = models.TextField(max_length=400)
+    body = models.TextField()
     time_created = models.DateTimeField(auto_now=True)
     author = models.ForeignKey(User , null=True, blank=True)
     category = models.CharField(max_length=1, choices=CATIGORIES, default='Everyday Living')
@@ -33,7 +33,7 @@ class Rant(models.Model):
 class Comment(models.Model):
     name = models.CharField(max_length=80, default="anonymous")
     rant = models.ForeignKey(Rant, related_name='comments')
-    body = models.TextField(max_length=400)
+    body = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now_add=True)
     class Meta:
