@@ -6,7 +6,7 @@ input {
 }
 
 textarea {
-
+    vertical-align: top;
     align-self: center;
     box-sizing: border-box;
     border: 2px solid #ccc;
@@ -39,4 +39,7 @@ a:active {
     color: yellow;
     background-color: transparent;
     text-decoration: underline;
+}
+label{
+  align-self: flex-start;
 }

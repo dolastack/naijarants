@@ -5,9 +5,9 @@
 {% endblock content_title %}
 
 {% block content %}
-<div class="container col-xl-8 align-self-center">
+<div class="container col-xl-8 align-self-center align-items-start">
 
-<form method="post" action="{% url 'rants_new_rant' %}" class="font-weight-bold align-text-top" style="">
+<form method="post" action="{% url 'rants_new_rant' %}" class="font-weight-bold align-text-top align-items-start" style="">
   {% csrf_token %}
   {{ form.as_p }}
   <button type="submit" class="btn-primary btn-lg">Create Rant</button>
