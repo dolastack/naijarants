@@ -5,11 +5,13 @@
 {% endblock content_title %}
 
 {% block content %}
+<div class="col-xs-12 col-md-9">
+
 
 <form method="post" action="{% url 'rants_new_rant' %}" class="font-weight-bold align-text-top" style="">
   {% csrf_token %}
   {{ form.as_p }}
   <button type="submit" class="btn-primary btn-lg">Create Rant</button>
 </form>
-
+</div>
 {% endblock content %}
