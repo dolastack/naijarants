@@ -80,16 +80,13 @@ WSGI_APPLICATION = 'naijarants.wsgi.application'
 DATABASES = {
 
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'MAME' : 'naijarants',
         'USER': 'dola',
         'PASSWORD': 'Lum1nou4',
         'HOST': 'localhost',
         'PORT': '',
-        'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-        }
-
+    
     }
 }
 
