@@ -140,8 +140,8 @@ STATICFILES_DIRS = [
     ]
 from django.urls import reverse
 
-LOGIN_REDIRECT_URL = reverse('accounts_user_home')
-LOGOUT_REDIRECT_URL = reverse('index')
+LOGIN_REDIRECT_URL = 'accounts_user_home'
+LOGOUT_REDIRECT_URL = 'index'
 
 
 SOCIAL_AUTH_FACEBOOK_KEY = '132305167384067'
