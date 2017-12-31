@@ -81,7 +81,7 @@ DATABASES = {
 
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'MAME' : 'naijarants',
+        'NAME' : 'naijarants',
         'USER': 'dola',
         'PASSWORD': 'Lum1nou4',
         'HOST': 'localhost',
