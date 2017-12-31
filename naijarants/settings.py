@@ -137,10 +137,10 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
         os.path.join(BASE_DIR, 'static')
     ]
-from django.core.urlresolvers import reverse_lazy
+from django.urls import reverse
 
-LOGIN_REDIRECT_URL = reverse_lazy('accounts_user_home')
-LOGOUT_REDIRECT_URL = reverse_lazy('index')
+LOGIN_REDIRECT_URL = reverse('accounts_user_home')
+LOGOUT_REDIRECT_URL = reverse('index')
 
 
 SOCIAL_AUTH_FACEBOOK_KEY = '132305167384067'
