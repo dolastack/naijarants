@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rants.apps.RantsConfig',
-    'rssfeed.apps.RssfeedConfig'
+    'rssfeed.apps.RssfeedConfig',
+    'accounts.apps.AccountsConfig',
 ]
 
 MIDDLEWARE = [
