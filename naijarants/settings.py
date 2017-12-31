@@ -77,11 +77,11 @@ WSGI_APPLICATION = 'naijarants.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    'test': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
-    'mysql': {
+    'default': {
         'ENGINE': 'django.db.backends.mysql',
         'MAME' : 'naijarants',
         'USER': 'dola',
@@ -141,8 +141,7 @@ from django.core.urlresolvers import reverse_lazy
 
 LOGIN_REDIRECT_URL = reverse_lazy('accounts_user_home')
 LOGOUT_REDIRECT_URL = reverse_lazy('index')
-#from django.contrib.auth.models import AnonymousUser
-#anonymous_user = AnonymousUser()
+
 
 SOCIAL_AUTH_FACEBOOK_KEY = '132305167384067'
 SOCIAL_AUTH_FACEBOOK_SECRET = 'c2228e01be2decf30c6a721dc81abd5c'
