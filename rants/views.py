@@ -15,7 +15,7 @@ def rants_list(request):
 def rant_detail(request, rant_title):
     rant = get_object_or_404(Rant, title=rant_title)
 
-    comments = rant.comments.objects.all()
+    comments = rant.comments.filter(active=True)
     if request.method == 'POST':
         comment_form =CommentForm(data=request.POST)
         if comment_form.is_valid():
