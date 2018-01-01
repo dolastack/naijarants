@@ -129,6 +129,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 STATICFILES_DIRS = [
         os.path.join(BASE_DIR, 'static')
@@ -137,6 +139,28 @@ from django.urls import reverse
 
 LOGIN_REDIRECT_URL = 'accounts_user_home'
 LOGOUT_REDIRECT_URL = 'index'
+LOGIN_URL = 'accounts_user_home'
+LOGOUT_URL = 'index'
+
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django_redis.cache.RedisCache',
+        'LOCATION': 'redis://127.0.0.1:6379/1',
+        'OPTIONS': {
+            'CLIENT_CLASS': 'django_redis.client.DefaultClient'
+        },
+        'KEYP_PREFIX' 'naijarants',
+    }
+}
+CACHE_TTL = 10
+
+BROKER_URL = 'redis://localhost:6379/0'
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_RESULT_BACKEND = 'djcelery.backends.database:DatabaseBackend'
+CELERYBEAT_SCHEDULER = 'djcelery.schedulers.DatabaseScheduler'
 
 
 SOCIAL_AUTH_FACEBOOK_KEY = '132305167384067'
