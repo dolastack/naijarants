@@ -18,9 +18,9 @@ from django.contrib import admin
 from .views import about
 
 urlpatterns = [
+    url(r'admin/', admin.site.urls),
     url(r'^about$', about, name='about_page'),
     url(r'^rant/', include('rants.urls')),
     url(r'^account/', include('accounts.urls')),
-    url(r'^', include('rssfeed.urls')),
-    url(r'^admin/', admin.site.urls),
+    url(r'^$', include('rssfeed.urls')),
 ]
