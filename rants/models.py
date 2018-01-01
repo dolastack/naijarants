@@ -22,7 +22,7 @@ class Rant(models.Model):
     author = models.ForeignKey(User , null=True, blank=True)
     category = models.CharField(max_length=1, choices=CATIGORIES, default='Everyday Living')
     objects = RantQuerySet.as_manager()
-    updated = models.DateTimeField(auto_now_add=True)
+
     class Meta:
         ordering = ['-time_created']
 
