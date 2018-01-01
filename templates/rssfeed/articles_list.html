@@ -4,7 +4,7 @@
 {% for articles in rows  %}
 
       {% for entry in articles %}
-        <h2>{{entry.title}}</h2>
+        <h4>{{entry.title}}</h4>
         <p>{{ entry.description | safe }}</p>
         <p>
           <a href="{{entry.url}}" target="_blank" class="btn btn-primary">Veiw Details</a>

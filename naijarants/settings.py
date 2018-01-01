@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rants.apps.RantsConfig',
     'rssfeed.apps.RssfeedConfig',
     'accounts.apps.AccountsConfig',
+    'djcelery',
 ]
 
 MIDDLEWARE = [
