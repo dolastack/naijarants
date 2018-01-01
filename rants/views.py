@@ -15,7 +15,7 @@ def rants_list(request):
 def rant_detail(request, rant_title):
     rant = get_object_or_404(Rant, title=rant_title)
 
-    comments = rant.comments.objects()
+    comments = rant.comments()
     if request.method == 'POST':
         comment_form =CommentForm(data=request.POST)
         if comment_form.is_valid():
@@ -27,6 +27,7 @@ def rant_detail(request, rant_title):
     context = {'rant': rant, 'comments': comments, 'comment_form': comment_form}
     template = "rants/rant_detail.html"
     return render(request, template, context)
+
 #@login_required
 def new_rant(request):
     if request.method == "POST":
