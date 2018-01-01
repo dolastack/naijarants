@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from .models import Rant
-from .forms import RantForm
+from .forms import RantForm, CommentForm
 
 # Create your views here.
 
@@ -15,7 +15,16 @@ def rants_list(request):
 def rant_detail(request, rant_title):
     rant = get_object_or_404(Rant, title=rant_title)
 
-    context = {'rant': rant}
+    comments = rant.comments.objects()
+    if request.method == 'POST':
+        comment_form =CommentForm(data=request.POST)
+        if comment_form.is_valid():
+            new_comment = comment_form.save(commit=False)
+            new_comment.rant = rant
+            new_comment.save()
+    else:
+        comment_form = CommentForm()
+    context = {'rant': rant, 'comments': comments, 'comment_form': comment_form}
     template = "rants/rant_detail.html"
     return render(request, template, context)
 #@login_required
