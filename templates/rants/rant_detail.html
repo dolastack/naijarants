@@ -9,6 +9,7 @@
   <h2>{{ rant.title }}</h2>
   <p>{{ rant.body }}</p>
   Submitted by {% if rant.author %}  {{ rant.author }} {% else %} anonymous {% endif %}
+  <hr />
   {% with comments.count as total_comments %}
     <h3>{{ total_comments }} comment {{ total_comments|pluralize }}</h3>
   {% endwith %}
