@@ -20,7 +20,7 @@ CACHE_TTL = getattr(settings, 'CACHE_TTL', DEFAULT_TIMEOUT)
 #@cache_page(CACHE_TTL)
 def articles_list(request):
 
-    display_list = Article.objects.all()
+    display_list = Article.objects.articles_after(days=2)
 
     rowsd = [display_list[x:x+1] for x in range(0, len(display_list), 1)]
 
