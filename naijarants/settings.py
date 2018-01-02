@@ -150,7 +150,7 @@ CACHES = {
         'OPTIONS': {
             'CLIENT_CLASS': 'django_redis.client.DefaultClient'
         },
-        'KEYP_PREFIX' 'naijarants',
+        'KEYP_PREFIX': 'naijarants',
     }
 }
 CACHE_TTL = 10
