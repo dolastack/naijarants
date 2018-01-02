@@ -5,9 +5,12 @@
 {% endblock content_title %}
 
 {% block content %}
-<div class="container w-75 align-self-center align-items-start">
+<div class="container align-self-center align-items-start">
 
 <form method="post" action="{% url 'rants_new_rant' %}" class="font-weight-bold align-text-top align-items-start" style="">
+  <style>
+    textarea {width: 100%}
+  </style>
   {% csrf_token %}
   {{ form.as_p }}
   <button type="submit" class="btn-primary btn-lg">Create Rant</button>
