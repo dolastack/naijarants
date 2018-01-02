@@ -6,6 +6,7 @@ input {
 }
 
 textarea {
+    width: 100%;
     vertical-align: top;
     align-self: center;
     box-sizing: border-box;
