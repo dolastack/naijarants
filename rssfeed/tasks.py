@@ -49,7 +49,7 @@ def get_latest_article(sender,  **kwargs):
 #post save signal connect
 #post_save.connect(get_latest_article, sender=Article)
 
-@periodic_task(run_every=(crontab( minute="*/18")))
+#@periodic_task(run_every=(crontab( minute="*/18")))
 def post_to_facebook():
     """Post new articles to facebook"""
 
