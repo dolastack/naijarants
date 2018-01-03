@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.auth.models import AnonymousUser
+from django.urls import reverse
 # Create your models here.
 
 class RantQuerySet(models.QuerySet):
@@ -25,6 +26,8 @@ class Rant(models.Model):
     updated = models.DateTimeField(auto_now_add=True)
     class Meta:
         ordering = ['-time_created']
+    def get_absolute_url(self):
+        return reverse('rant_detail', args[self.title])
 
     def __str__(self):
         return self.title
