@@ -15,8 +15,11 @@ def create_alias(request):
     else:
         form = AliasForm()
         return render(request, 'accounts/alias_creation_form.html', {'form': form} )
-@login_required
+#@login_required
 def accounts_user_home(request):
     rants = Rant.objects.all()
     context = {'rants': rants }
-    return render(request, 'accounts/user_home.html' , context )
+    if request.user is_authenticated:
+        return render(request, 'accounts/user_home.html' , context )
+    else:
+        return redirect('index')
