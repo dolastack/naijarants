@@ -40,4 +40,4 @@ def new_rant(request):
             return redirect('accounts_user_home')
     else:
         form = RantForm()
-        return render(request, "rants/new_rant.html", {'form': form})
+    return render(request, "rants/new_rant.html", {'form': form})

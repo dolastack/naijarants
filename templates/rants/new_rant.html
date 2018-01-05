@@ -8,16 +8,16 @@
 <div class="container align-self-center align-items-start">
 
 <form method="post" action="{% url 'rants_new_rant' %}" class="font-weight-bold align-text-top align-items-start">
-
+  {% csrf_token %}
   <table>
     {{ form.as_table }}
     <tr>
       <td>&nbsp</td>
-      <td><input type="submit" value="Create Rant"</td>
     </tr>
   </table>
 
-  {% csrf_token %}
+  <button type="submit" class="btn-primary">Create Rant</button>
 </form>
+
 </div>
 {% endblock content %}
