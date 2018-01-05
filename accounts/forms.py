@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 
 
 class AliasForm(ModelForm):
+    required_css_class = 'required'
     password = forms.CharField(label='Password', widget=forms.PasswordInput)
     password2 = forms.CharField(label='Repeat Password', widget=forms.PasswordInput)
     class Meta:
