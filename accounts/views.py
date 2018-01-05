@@ -19,7 +19,7 @@ def create_alias(request):
 def accounts_user_home(request):
     rants = Rant.objects.all()
     context = {'rants': rants }
-    if request.user is_authenticated:
+    if request.user.is_authenticated:
         return render(request, 'accounts/user_home.html' , context )
     else:
         return redirect('index')
