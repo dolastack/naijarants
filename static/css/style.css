@@ -22,6 +22,12 @@ a:active {
     text-decoration: underline;
 }
 
+input, textarea{
+  width: 100%;
+  padding: 5px!important;
+  box-sizing:  border-box;
+
+}
 .required label:after {
   content: "*";
 }
