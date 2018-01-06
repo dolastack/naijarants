@@ -23,7 +23,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'w3q3$mg_u!2#n4jv_zoybtgu(qaaa6&x8qsz5k2b28ei@#*6)d'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['10.0.0.191', '127.0.0.1', '10.0.0.150', '10.14.149.184',
                  '54.218.82.92']
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
     'rssfeed.apps.RssfeedConfig',
     'accounts.apps.AccountsConfig',
     'djcelery',
+    'django_social_share'
 ]
 
 MIDDLEWARE = [
@@ -67,6 +69,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.request',
             ],
         },
     },
