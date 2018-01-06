@@ -34,7 +34,8 @@ def new_rant(request):
         rant = Rant()
         if request.user.is_authenticated:
             rant.author=request.user
-        form = RantForm(instance=rant, data=request.POST, request.FILES)
+        form = RantForm(instance=rant, data=request.POST, image=request.FILES)
+        
         if form.is_valid():
             form.save()
             return redirect('accounts_user_home')
