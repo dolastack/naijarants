@@ -8,7 +8,7 @@ class RantForm(ModelForm):
     required_css_class = 'required'
     class Meta:
         model = Rant
-        fields = ("title", "body", "image" "category")
+        fields = ("title", "body", "image", "category")
         labels = { 'body' : _('Rant'),
                    'title': _('Title')
                    }
