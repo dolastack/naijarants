@@ -27,7 +27,7 @@
                 <h3>{{rant.title}} </h3>
                 <p>{{ rant.body }}</p>
                 <p>
-                  <a href="{% url 'rant_detail' rant_title=rant.title %}" class="btn btn-primary">Full Details</a>
+                  <a href="{% url 'rant_detail' id=rant.id rant_title=rant.title %}" class="btn btn-primary">Full Details</a>
                 </p>
            </div>
           {% endfor %}
