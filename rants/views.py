@@ -12,8 +12,8 @@ def rants_list(request):
     #template = "base.html"
     return rants
 
-def rant_detail(request, rant_title):
-    rant = get_object_or_404(Rant, title=rant_title)
+def rant_detail(request, id,rant_title):
+    rant = get_object_or_404(Rant, title=rant_title , pk=id)
 
     comments = rant.comments.filter(active=True)
     if request.method == 'POST':
