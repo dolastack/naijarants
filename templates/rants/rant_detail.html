@@ -1,11 +1,12 @@
 {% extends "base.html" %}
-{% load social_share %}
+
 
 {% block content_title %}
   {{ rant.title }}
 {% endblock content_title %}
 
 {% block content %}
+{% load social_share %}
 <div class="container col-xl-8 align-self-center">
   <h2>{{ rant.title }}</h2>
   <p>{{ rant.body }}</p>
