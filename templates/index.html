@@ -30,7 +30,7 @@
                 <h3>{{rant.title}} </h3>
                 <p>{{ rant.body  | slice:":200" | linebreaks }}</p>
                 <p>
-                  <a href="{% url 'rant_detail' rant_title=rant.title %}" class="btn btn-primary">Full Details</a>
+                  <a href="{% url 'rant_detail' rant_id=id rant_title=rant.title %}" class="btn btn-primary">Full Details</a>
 
 
                 </p>
