@@ -13,7 +13,8 @@
   Submitted by {% if rant.author %}  {{ rant.author }} {% else %} anonymous {% endif %}
 
   {% post_to_facebook rant "Post to Facebook" %}
-
+  {% post_to_twitter "Rant: {{rant.title}}. Check it out!" rant "Post to Twitter" %}
+  <hr />
   {% with comments.count as total_comments %}
     <h3>{{ total_comments }} comment {{ total_comments|pluralize }}</h3>
   {% endwith %}
