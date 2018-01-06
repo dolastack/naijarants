@@ -11,9 +11,10 @@
   <h2>{{ rant.title }}</h2>
   <p>{{ rant.body }}</p>
   Submitted by {% if rant.author %}  {{ rant.author }} {% else %} anonymous {% endif %}
-
-  <button type="button" class="btn btn-primary">{% post_to_facebook rant "Post to Facebook" %}</button>
-  {% post_to_twitter "Rant: {{rant.title}}. Check it out!" rant "Post to Twitter" %}
+  <p>
+    <button type="button" class="btn btn-info">{% post_to_facebook rant "Post to Facebook" %}</button>
+    <button type="button" class="btn btn-info">{% post_to_twitter "Rant: {{rant.title}}. Check it out!" rant "Post to Twitter" %}</button>
+  </p>
   <hr />
   {% with comments.count as total_comments %}
     <h3>{{ total_comments }} comment {{ total_comments|pluralize }}</h3>
