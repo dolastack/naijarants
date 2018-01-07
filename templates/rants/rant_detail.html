@@ -12,7 +12,7 @@
   <p>{{ rant.body }}</p>
 
   {% if rant.image %}<img src="{{ rant.image.url }}" alt="img" class="img-responsive img-rounded" >{% endif %}
-  Submitted by {% if rant.author %}  {{ rant.author }} {% else %} anonymous {% endif %}
+  <p>Submitted by {% if rant.author %}  {{ rant.author }} {% else %} anonymous {% endif %}</p>
   <p>
     <button type="button" class="btn btn-default">{% post_to_facebook rant "Post to Facebook" %}</button>
     <button type="button" class="btn btn-default">{% post_to_twitter "Rant: {{rant.title}}. Check it out!" rant "Post to Twitter" %}</button>
