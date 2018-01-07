@@ -10,7 +10,7 @@ from .forms import RantForm, CommentForm
 # Create your views here.
 CACHE_TTL = getattr(settings, 'CACHE_TTL', DEFAULT_TIMEOUT)
 
-@cache_page(CACHE_TTL)
+#@cache_page(CACHE_TTL)
 def rants_list(request):
     rants = Rant.objects.all()
     context = {'rants': rants}
