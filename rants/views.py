@@ -10,7 +10,7 @@ from .forms import RantForm, CommentForm
 # Create your views here.
 CACHE_TTL = getattr(settings, 'CACHE_TTL', DEFAULT_TIMEOUT)
 
-#@cache_page(CACHE_TTL)
+
 def rants_list(request):
     rants = Rant.objects.all()
     context = {'rants': rants}
@@ -40,8 +40,8 @@ def new_rant(request):
         if request.user.is_authenticated:
             rant.author=request.user
         rant.image = request.FILES
-        form = RantForm(instance=rant, data=request.POST)
-
+        #form = RantForm(instance=rant, data=request.POST)
+        form = RantForm( request.POST, request.FILES, instance=rant)
         if form.is_valid():
             form.save()
             return redirect('accounts_user_home')
