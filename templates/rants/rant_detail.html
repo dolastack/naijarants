@@ -10,7 +10,7 @@
 <div class="container col-xl-8 align-self-center">
   <h2>{{ rant.title }}</h2>
   <p>{{ rant.body }}</p>
-  {{ rant.image }}
+  {{ rant.image.url }}
   {% if rant.image %}<img src="{{ rant.image.img.url }}" />{% endif %}
   Submitted by {% if rant.author %}  {{ rant.author }} {% else %} anonymous {% endif %}
   <p>
