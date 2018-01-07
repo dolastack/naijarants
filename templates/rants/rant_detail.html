@@ -10,7 +10,7 @@
 <div class="container col-xl-8 align-self-center">
   <h2>{{ rant.title }}</h2>
   <p>{{ rant.body }}</p>
-  <!-- img src="{{ rant.image }}" / -->
+  {% if rant.image %}<img src="{{ rant.image }}" />{% endif %}
   Submitted by {% if rant.author %}  {{ rant.author }} {% else %} anonymous {% endif %}
   <p>
     <button type="button" class="btn btn-default">{% post_to_facebook rant "Post to Facebook" %}</button>

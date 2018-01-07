@@ -42,6 +42,7 @@ def new_rant(request):
         rant.image = request.FILES
         #form = RantForm(instance=rant, data=request.POST)
         form = RantForm( request.POST, request.FILES, instance=rant)
+
         if form.is_valid():
             form.save()
             return redirect('accounts_user_home')
