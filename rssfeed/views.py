@@ -17,7 +17,7 @@ from rants.views import rants_list
 
 CACHE_TTL = getattr(settings, 'CACHE_TTL', DEFAULT_TIMEOUT)
 
-#@cache_page(CACHE_TTL)
+@cache_page(CACHE_TTL)
 def articles_list(request):
 
     display_list = Article.objects.articles_after(days=2)

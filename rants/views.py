@@ -1,11 +1,14 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.views.decorators.cache import cache_page
 from .models import Rant
 from .forms import RantForm, CommentForm
 
 # Create your views here.
+CACHE_TTL = getattr(settings, 'CACHE_TTL', DEFAULT_TIMEOUT)
 
+@cache_page(CACHE_TTL)
 def rants_list(request):
     rants = Rant.objects.all()
     context = {'rants': rants}
