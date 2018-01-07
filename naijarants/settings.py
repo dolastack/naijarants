@@ -27,7 +27,7 @@ SECRET_KEY = 'w3q3$mg_u!2#n4jv_zoybtgu(qaaa6&x8qsz5k2b28ei@#*6)d'
 DEBUG = False
 
 ALLOWED_HOSTS = ['10.0.0.191', '127.0.0.1', '10.0.0.150', '10.14.149.184',
-                 '54.218.82.92', '54.69.234.186', 'naijarants.com']
+                 '54.218.82.92', '54.69.234.186', 'naijarants.com', '172.31.23.174']
 
 
 # Application definition
