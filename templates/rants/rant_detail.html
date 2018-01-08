@@ -11,7 +11,7 @@
   <h2>{{ rant.title }}</h2>
   <p>{{ rant.body }}</p>
 
-  {% if rant.image %}<img src="/home/ubuntu/django-projects/naijarants/src/naijarants/media/file-uploads/license-back.jpg" alt="img" width="500" height="377">{% endif %}
+  {% if rant.image %}<img src="{{ rant.image.url }}" alt="img" width="500" height="377">{% endif %}
   <p>Submitted by {% if rant.author %}  {{ rant.author }} {% else %} anonymous {% endif %}</p>
   <p>
     <button type="button" class="btn btn-default">{% post_to_facebook rant "Post to Facebook" %}</button>
