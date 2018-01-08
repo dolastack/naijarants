@@ -39,9 +39,9 @@ def new_rant(request):
         rant = Rant()
         if request.user.is_authenticated:
             rant.author=request.user
-        rant.image = request.FILES
+        #rant.image = request.FILES
         #form = RantForm(instance=rant, data=request.POST)
-        form = RantForm( request.POST, request.FILES, instance=rant)
+        form = RantForm( data=request.POST, image=request.FILES['image'], instance=rant)
 
         if form.is_valid():
             form.save()
