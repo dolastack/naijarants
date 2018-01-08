@@ -36,16 +36,19 @@ def rant_detail(request, id,rant_title):
 #@login_required
 def new_rant(request):
     if request.method == "POST":
-        rant = Rant()
-        if request.user.is_authenticated:
-            rant.author=request.user
+        #rant = Rant()
+
         #rant.image = request.FILES
         #rant.image = request.FILES['image']
         #form = RantForm(instance=rant, data=request.POST)
-        form = RantForm( request.POST, request.FILES, instance=rant)
-        print(request.FILES)
+        form = RantForm( request.POST, request.FILES)
+
         if form.is_valid():
-            form.save()
+            rant = form.save(commit=False)
+            if request.user.is_authenticated:
+                rant.author=request.user
+            rant.image = request.FILES['image']
+            rant.save()
             return redirect('accounts_user_home')
     else:
         form = RantForm()
