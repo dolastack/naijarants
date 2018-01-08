@@ -40,10 +40,12 @@ def new_rant(request):
         if request.user.is_authenticated:
             rant.author=request.user
         #rant.image = request.FILES
+        rant.image = request.FILES['image']
         #form = RantForm(instance=rant, data=request.POST)
-        form = RantForm( data=request.POST, image=request.FILES['image'], instance=rant)
+        form = RantForm( request.POST, request.FILES, instance=rant)
 
         if form.is_valid():
+
             form.save()
             return redirect('accounts_user_home')
     else:
