@@ -41,13 +41,15 @@ def new_rant(request):
         #rant.image = request.FILES
         #rant.image = request.FILES['image']
         #form = RantForm(instance=rant, data=request.POST)
+
         form = RantForm( request.POST, request.FILES)
 
         if form.is_valid():
             rant = form.save(commit=False)
             if request.user.is_authenticated:
                 rant.author=request.user
-                rant.image = request.cleaned_data['image']
+                
+            rant.image = request.cleaned_data['image']
             rant.save()
             return redirect('accounts_user_home')
     else:
