@@ -49,7 +49,7 @@ def new_rant(request):
             if request.user.is_authenticated:
                 rant.author=request.user
                 
-            rant.image = request.cleaned_data['image']
+            rant.image = form.cleaned_data['image']
             rant.save()
             return redirect('accounts_user_home')
     else:
