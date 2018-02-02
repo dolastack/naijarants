@@ -27,9 +27,12 @@ urlpatterns = [
     url(r'^account/', include('accounts.urls')),
     url(r'^', include('rssfeed.urls')),
 ]
+
+
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
- """   urlpatterns += [
+"""
+  urlpatterns += [
         url(r'^media/(?P<path>.*)$',
             serve, {'document_root': settings.MEDIA_URL,}),
     ]
