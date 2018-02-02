@@ -51,7 +51,7 @@ def new_rant(request):
                 
             rant.image = form.cleaned_data['image']
             rant.save()
-            return redirect('accounts_user_home')
+        return redirect('accounts_user_home')
     else:
         form = RantForm()
     return render(request, "rants/new_rant.html", {'form': form})
