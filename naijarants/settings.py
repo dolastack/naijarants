@@ -137,12 +137,12 @@ STATICFILES_DIRS = [
     ]
 STATIC_URL = '/static/'
 
-#MEDIA_URL = ''
+
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 
-from django.urls import reverse
+#from django.urls import reverse
 
 LOGIN_REDIRECT_URL = 'accounts_user_home'
 LOGOUT_REDIRECT_URL = 'index'
