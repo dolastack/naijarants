@@ -137,11 +137,6 @@ STATICFILES_DIRS = [
     ]
 STATIC_URL = '/static/'
 
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
-
-
 #from django.urls import reverse
 
 LOGIN_REDIRECT_URL = 'accounts_user_home'
@@ -172,3 +167,6 @@ CELERYBEAT_SCHEDULER = 'djcelery.schedulers.DatabaseScheduler'
 
 SOCIAL_AUTH_FACEBOOK_KEY = '132305167384067'
 SOCIAL_AUTH_FACEBOOK_SECRET = 'c2228e01be2decf30c6a721dc81abd5c'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
