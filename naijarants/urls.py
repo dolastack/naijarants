@@ -26,7 +26,7 @@ urlpatterns = [
     url(r'^rant/', include('rants.urls')),
     url(r'^account/', include('accounts.urls')),
     url(r'^', include('rssfeed.urls')),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
 if settings.DEBUG:
