@@ -26,7 +26,9 @@ urlpatterns = [
     url(r'^rant/', include('rants.urls')),
     url(r'^account/', include('accounts.urls')),
     url(r'^', include('rssfeed.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
+
+""" + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
 if settings.DEBUG:
@@ -35,8 +37,4 @@ if settings.DEBUG:
 
     urlpatterns += static(settings.STATIC_URL,
                           document_root=settings.STATIC_ROOT)
-"""urlpatterns += [
-        url(r'^media/(?P<path>.*)$',
-            serve, {'document_root': settings.MEDIA_ROOT, }),
-    ]
-    """
+"""
