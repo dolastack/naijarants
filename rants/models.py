@@ -27,8 +27,8 @@ class Rant(models.Model):
     category = models.CharField(max_length=1, choices=CATIGORIES, default='Everyday Living')
     objects = RantQuerySet.as_manager()
     updated = models.DateTimeField(auto_now_add=True)
-    #image = models.ImageField(upload_to='file-uploads/%Y/%m/%D/', blank=True )
-    image = models.ImageField( blank=True )
+    image = models.ImageField(upload_to='file-uploads/%Y/%m/%D/', blank=True )
+    
     class Meta:
         ordering = ['-time_created']
     def get_absolute_url(self):
