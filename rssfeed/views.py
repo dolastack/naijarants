@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import  Article, Feed
 from .forms import FeedForm
-from background_task import background
+#from background_task import background
 from django.utils import timezone
 import feedparser, datetime
 from .tasks import  save_article

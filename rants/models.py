@@ -10,7 +10,9 @@ from django.urls import reverse
 class RantQuerySet(models.QuerySet):
     def rant(self, dtitle):
         return self.filter(title=dtitle)
-    def top_rants():
+    def rant_of_type(self, dcategory):
+        return self.filter(category=dcategory)
+    def top_rants(self):
         pass
 
 CATIGORIES = (
@@ -25,10 +27,10 @@ class Rant(models.Model):
     time_created = models.DateTimeField(auto_now=True)
     author = models.ForeignKey(User , null=True, blank=True)
     category = models.CharField(max_length=1, choices=CATIGORIES, default='Everyday Living')
-    objects = RantQuerySet.as_manager()
     updated = models.DateTimeField(auto_now_add=True)
-    #image = models.ImageField(upload_to='file-uploads/%Y/%m/%D/', blank=True )
-    image = models.ImageField( blank=True )
+    image = models.ImageField(upload_to='file-uploads/%Y/%m/%D/', blank=True )
+    #image = models.ImageField( blank=True )
+    objects = RantQuerySet.as_manager()
     class Meta:
         ordering = ['-time_created']
     def get_absolute_url(self):
