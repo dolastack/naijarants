@@ -13,11 +13,13 @@ CACHE_TTL = getattr(settings, 'CACHE_TTL', DEFAULT_TIMEOUT)
 
 def rant_by_category(request, category):
     rants = Rant.objects.rant_by_category(category)
-    return rants
+    template = "index.html"
+    context = {'rants': rants}
+    return render(request, template, context)
 
 def rants_list(request):
     rants = Rant.objects.all()
-    context = {'rants': rants}
+    #context = {'rants': rants}
     #template = "base.html"
     return rants
 
