@@ -26,6 +26,6 @@ urlpatterns = [
     url(r'^about$', about, name='about_page'),
     url(r'^rant/', include('rants.urls')),
     url(r'^account/', include('accounts.urls')),
-    url(r'(?P<category>[^/]*)', rants_by_category , name='rants_by_catogory'),
+    #url(r'(?P<category>[^/]*)', rants_by_category , name='rants_by_catogory'),
     url(r'^', include('rssfeed.urls')),
 ]
