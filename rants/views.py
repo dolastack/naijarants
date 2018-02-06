@@ -11,7 +11,7 @@ from .forms import RantForm, CommentForm
 CACHE_TTL = getattr(settings, 'CACHE_TTL', DEFAULT_TIMEOUT)
 
 
-def rant_by_category(request, category):
+def rants_by_category(request, category):
     rants = Rant.objects.rant_by_category(category)
     template = "index.html"
     context = {'rants': rants}
