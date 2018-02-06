@@ -25,16 +25,6 @@ urlpatterns = [
     url(r'^about$', about, name='about_page'),
     url(r'^rant/', include('rants.urls')),
     url(r'^account/', include('accounts.urls')),
+    url(r'(?P <category>*'), about, name=by_catogory),
     url(r'^', include('rssfeed.urls')),
 ]
-
-""" + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL,
-                          document_root=settings.MEDIA_ROOT)
-
-    urlpatterns += static(settings.STATIC_URL,
-                          document_root=settings.STATIC_ROOT)
-"""
