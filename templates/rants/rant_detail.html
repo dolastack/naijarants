@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 
-
 {% block content_title %}
   {{ rant.title }}
 {% endblock content_title %}
@@ -12,10 +11,8 @@
   <p>{{ rant.body }}</p>
 
   {% if rant.image %}
-   
-     <img src="{{ rant.image.url }}" class="img-responsive" width="304" height="236">
-   
-   {% endif %}
+        <img src="{{ rant.image.url }}" class="img-responsive" width="304" height="236">
+  {% endif %}
 
   <p>Submitted by {% if rant.author %}  {{ rant.author }} {% else %} anonymous {% endif %}</p>
   <p>

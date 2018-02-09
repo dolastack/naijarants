@@ -19,8 +19,6 @@ def rants_by_category(request, category):
 
 def rants_list(request):
     rants = Rant.objects.all()
-    #context = {'rants': rants}
-    #template = "base.html"
     return rants
 
 def rant_detail(request, id,rant_title):
@@ -39,15 +37,8 @@ def rant_detail(request, id,rant_title):
     template = "rants/rant_detail.html"
     return render(request, template, context)
 
-#@login_required
 def new_rant(request):
     if request.method == "POST":
-        #rant = Rant()
-
-        #rant.image = request.FILES
-        #rant.image = request.FILES['image']
-        #form = RantForm(instance=rant, data=request.POST)
-
         form = RantForm( request.POST, request.FILES)
 
         if form.is_valid():
