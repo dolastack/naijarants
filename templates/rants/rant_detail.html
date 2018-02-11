@@ -16,8 +16,8 @@
 
   <p>Submitted by {% if rant.author %}  {{ rant.author }} {% else %} anonymous {% endif %}</p>
   <p>
-    <button type="button" class="btn btn-default">{% post_to_facebook rant.get_absolute_url "Post to Facebook" %}</button>
-    <button type="button" class="btn btn-default">{% post_to_twitter "Rant: {{rant.title}}. Check it out!" rant "Post to Twitter" %}</button>
+    <button type="button" class="btn btn-default">{% post_to_facebook rant "Post to Facebook" %}</button>
+    <button type="button" class="btn btn-default">{% post_to_twitter "Rant: {{ rant.title }}. Check it out!" rant "Post to Twitter" %}</button>
   </p>
   <hr />
   {% with comments.count as total_comments %}
