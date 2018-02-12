@@ -16,7 +16,7 @@
 
   <p>Submitted by {% if rant.author %}  {{ rant.author }} {% else %} anonymous {% endif %}</p>
   <p>
-    <button type="button" class="btn btn-default">{% post_to_facebook "http://naijarants.com/rant/{{ rant.id }}/{{ rant.title }}" "Post to Facebook" %}</button>
+    <button type="button" class="btn btn-default">{% post_to_facebook "http://naijarants.com/rant/{{ rant.id }}/{{ rant.title }}/" "Post to Facebook" %}</button>
     <button type="button" class="btn btn-default">{% post_to_twitter "Rant: {{ rant.title }}. Check it out!" "http://naijarants.com/rant/{{ rant.id }}/{{ rant.title }}" "Post to Twitter" %}</button>
   </p>
   <hr />
