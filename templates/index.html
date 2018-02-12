@@ -34,7 +34,7 @@
                 <p>{{ rant.body  | slice:":200" | linebreaks }}</p>
                 <p>
                   <!--a href="{% url 'rant_detail' id=rant.id rant_title=rant.title %}" class="btn btn-primary">Full Details</a -->
-                  <a href="{{ rant }}" class="btn btn-primary">Full Details</a>
+                  <a href="{{ rant.get_absolute_url }}" class="btn btn-primary">Full Details</a>
 
                 </p>
            </div>
