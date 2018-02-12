@@ -37,7 +37,7 @@ class Rant(models.Model):
         return reverse_lazy('rant_detail', args=[self.id, self.title])
     
     def get_social_url(self):
-        return "http://naijarants.com/rant/{id}/{title}".format( id=self.id + title=self.title )
+        return "http://naijarants.com/rant/{id}/{title}".format( id=self.id , title=self.title )
 
     def __str__(self):
         return self.title
