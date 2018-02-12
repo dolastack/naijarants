@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'djcelery',
     'django_social_share',
-    'django_bitly',
+   # 'django_bitly',
 ]
 
 MIDDLEWARE = [
