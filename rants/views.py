@@ -21,6 +21,25 @@ def rants_list(request):
     rants = Rant.objects.all()
     return rants
 
+
+def rant_detail(request, rant):
+   # rant = get_object_or_404(Rant, title=rant_title, pk=id)
+
+    comments = rant.comments.filter(active=True)
+    if request.method == 'POST':
+        comment_form = CommentForm(data=request.POST)
+        if comment_form.is_valid():
+            new_comment = comment_form.save(commit=False)
+            new_comment.rant = rant
+            new_comment.save()
+    else:
+        comment_form = CommentForm()
+    context = {'rant': rant, 'comments': comments,
+               'comment_form': comment_form}
+    template = "rants/rant_detail.html"
+    return render(request, template, context)
+
+"""
 def rant_detail(request, id,rant_title):
     rant = get_object_or_404(Rant, title=rant_title , pk=id)
 
@@ -36,7 +55,7 @@ def rant_detail(request, id,rant_title):
     context = {'rant': rant, 'comments': comments, 'comment_form': comment_form}
     template = "rants/rant_detail.html"
     return render(request, template, context)
-
+"""
 def new_rant(request):
     if request.method == "POST":
         form = RantForm( request.POST, request.FILES)
