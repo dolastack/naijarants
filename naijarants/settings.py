@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'rssfeed.apps.RssfeedConfig',
     'accounts.apps.AccountsConfig',
     'djcelery',
-    'django_social_share'
+    'django_social_share',
+    'django_bitly',
 ]
 
 MIDDLEWARE = [
