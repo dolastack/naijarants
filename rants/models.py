@@ -34,7 +34,7 @@ class Rant(models.Model):
     class Meta:
         ordering = ['-time_created']
     def get_absolute_url(self):
-        return reverse_lazy('rant_detail', args=[self.id, self.title])
+        return reverse('rant_detail', args=[self.id, self.title])
     
     def get_social_url(self):
         url = "http://naijarants.com/rant/{id}/{title}".format(

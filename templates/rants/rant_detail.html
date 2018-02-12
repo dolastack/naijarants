@@ -16,8 +16,8 @@
 
   <p>Submitted by {% if rant.author %}  {{ rant.author }} {% else %} anonymous {% endif %}</p>
   <p>
-    <button type="button" class="btn btn-default">{% post_to_facebook "{{ rant.get_social_url  }}" "Post to Facebook" %}</button>
-    <!--a href="https://www.facebook.com/sharer/sharer.php?u={{ rant.get_social_url }}" class="btn btn-primary">Post to Facebook</a -->
+    <!--button type="button" class="btn btn-default">{% post_to_facebook "{{ rant.get_social_url  }}" "Post to Facebook" %}</button -->
+    <a href=https://www.facebook.com/sharer/sharer.php?u="{{ rant.get_social_url }}" class="btn btn-primary">Post to Facebook</a>
     <button type="button" class="btn btn-default">{% post_to_twitter "Rant: {{ rant.title }}. Check it out!" "{{ rant.get_social_url }}" "Post to Twitter" %}</button>
   </p>
   <hr />
