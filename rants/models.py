@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.auth.models import AnonymousUser
 from django.core.files.storage import FileSystemStorage
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 # Create your models here.
 
 #fs = FileSystemStorage(location='file-uploads/')
@@ -34,7 +34,7 @@ class Rant(models.Model):
     class Meta:
         ordering = ['-time_created']
     def get_absolute_url(self):
-        return reverse('rant_detail', args=[self.id, self.title])
+        return reverse_lazy('rant_detail', args=[self.id, self.title])
 
     def __str__(self):
         return self.title
