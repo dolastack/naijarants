@@ -39,7 +39,7 @@ class Rant(models.Model):
     def get_social_url(self):
         url = "http://naijarants.com" + self.get_absolute_url()
         return url
-
+    
     def __str__(self):
         return self.title
 
