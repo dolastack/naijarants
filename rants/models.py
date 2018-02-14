@@ -40,10 +40,13 @@ class Rant(models.Model):
         url = "http://naijarants.com" + self.get_absolute_url()
         return url
     def get_tweet_text(self):
-        url = self.get_social_url().replace(" ", '%20')
+        #url = self.get_social_url().replace(" ", '%20')
         text = str(self.title).replace(" ", '%20')
-        tweet_text = '{0}%0A"{1}"'.format(text, url)
-        return tweet_text
+        #tweet_text = '{0}%0A"{1}"'.format(text, url)
+        return text
+    def get_encoded_url(self):
+        url = self.get_social_url().replace(" ", '%20')
+        return url
     def __str__(self):
         return self.title
 
