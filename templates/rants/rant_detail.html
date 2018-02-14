@@ -18,8 +18,8 @@
   <p>
     <!--button type="button" class="btn btn-default">{% post_to_facebook "{{ rant }}" "Post to Facebook" %}</button-->
     <a href=https://www.facebook.com/sharer/sharer.php?u={{ rant.get_social_url }} class="btn btn-primary">Post to Facebook</a>
-    <a href=https://twitter.com/intent/tweet?text=Rant: {{ rant.get_title }} {{ rant.get_social_url }} class="btn btn-primary">Post to Twitter</a>
-    <!--button type="button" class="btn btn-default">{% post_to_twitter "Rant: {{ rant.title }}. Check it out!" "http://naijarants.com{{ rant.get_absolute_url }}" "Post to Twitter" %}</button-->
+    <!--a href=https://twitter.com/intent/tweet?text=Rant: {{ rant.get_title }} {{ rant.get_social_url }} class="btn btn-primary">Post to Twitter</a -->
+    <button type="button" class="btn btn-default">{% post_to_twitter "Rant: {{ rant.title }}. Check it out!" {{ rant.get_social_url }} "Tweet" %}</button-->
   </p>
   <hr />
   {% with comments.count as total_comments %}
