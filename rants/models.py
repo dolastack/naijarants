@@ -42,7 +42,8 @@ class Rant(models.Model):
     def get_tweet_text(self):
         url = self.get_social_url().replace(" ", '%20')
         text = str(self.title).replace(" ", '%20')
-        return text + " \n " + url
+        tweet_text = text + "\n" + url
+        return tweet_text.replace(" ", '%20')
     def __str__(self):
         return self.title
 
