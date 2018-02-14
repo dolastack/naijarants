@@ -39,9 +39,10 @@ class Rant(models.Model):
     def get_social_url(self):
         url = "http://naijarants.com" + self.get_absolute_url()
         return url
-    def get_title(self):
+    def get_tweet_text(self):
+        url = self.get_social_url()..replace(" ", '%20')
         text = str(self.title).replace(" ", '%20')
-        return text
+        return text + " \n " + url
     def __str__(self):
         return self.title
 
