@@ -18,7 +18,7 @@
   <p>
     <!--button type="button" class="btn btn-default">{% post_to_facebook "{{ rant }}" "Post to Facebook" %}</button-->
     <a href=https://www.facebook.com/sharer/sharer.php?u={{ rant.get_social_url }} class="btn btn-primary">Post to Facebook</a>
-    <a rel="canonical" href=https://twitter.com/intent/tweet?text={{ rant.get_tweet_text }}&hashtags=NaijaRants class="btn btn-primary">Post to Twitter</a>
+    <a rel="canonical" href=https://twitter.com/intent/tweet?text={{ rant.get_tweet_text }}%0A{{ rant.get_encoded_url }}&hashtags=NaijaRants class="btn btn-primary">Post to Twitter</a>
     <!--button type="button" class="btn btn-default">{% post_to_twitter "Rant: {{ rant.title }}. Check it out!" "{{ rant.get_social_url }}" "Tweet" %}</button-->
   </p>
   <hr />
