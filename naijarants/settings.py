@@ -23,8 +23,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'w3q3$mg_u!2#n4jv_zoybtgu(qaaa6&x8qsz5k2b28ei@#*6)d'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = True
-DEBUG = False
+DEBUG = True
+#DEBUG = False
 
 ALLOWED_HOSTS = ['54.69.234.186', 'naijarants.com']
 

@@ -28,7 +28,7 @@ class Rant(models.Model):
     author = models.ForeignKey(User , null=True, blank=True)
     category = models.CharField(max_length=1, choices=CATIGORIES, default='Everyday Living')
     updated = models.DateTimeField(auto_now_add=True)
-    image = models.ImageField(upload_to='file-uploads/%Y/%m/%D/', blank=True )
+    files = models.FileField(upload_to='file-uploads/%Y/%m/%D/', blank=True )
     #image = models.ImageField( blank=True )
     objects = RantQuerySet.as_manager()
     class Meta:
