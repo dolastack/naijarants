@@ -10,8 +10,8 @@
   <h2>{{ rant.title }}</h2>
   <p>{{ rant.body }}</p>
 
-  {% if rant.image %}
-        <img src="{{ rant.image.url }}" class="img-responsive" width="304" height="236">
+  {% if rant.files %}
+        <img src="{{ rant.files.url }}" class="img-responsive" width="304" height="236">
   {% endif %}
 
   <p>Submitted by {% if rant.author %}  {{ rant.author }} {% else %} anonymous {% endif %}</p>
