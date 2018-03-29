@@ -52,7 +52,7 @@
     <h3>Your comment has been added.</h3>
   {% else %}
     <h3>Add a new comment.</h3>
-    <form action="." method=post>
+    <form action=""{% url 'rant_detail' %}"" method=post>
       {% csrf_token %}
       <table>
         <tr>
