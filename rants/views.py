@@ -71,3 +71,4 @@ def new_rant(request):
     else:
         form = RantForm()
     return render(request, "rants/new_rant.html", {'form': form})
+    #return render(request, "rants/new_rant.html", {'form': form})
