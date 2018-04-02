@@ -11,7 +11,6 @@ from django.core.cache.backends.base import DEFAULT_TIMEOUT
 
 from django.views.decorators.cache import cache_page
 from django.conf import settings
-#from rssfeed.settings import display_list
 
 from rants.views import rants_list
 
@@ -39,6 +38,7 @@ def articles_list(request):
         rows = paginator.page(paginator.num_pages)
 
     rants = rants_list(request)
+   
     context = {'rows' : rows, 'rants': rants}
     return render (request, 'rssfeed/articles_list.html' , context)
 
