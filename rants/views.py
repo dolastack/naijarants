@@ -6,7 +6,8 @@ from django.conf import settings
 from django.core.cache.backends.base import DEFAULT_TIMEOUT
 from .models import Rant
 from .forms import RantForm, CommentForm
-from django.views.generics.list  import ListView
+from django.views.generic.list import ListView
+from django.utils import timezone
 
 # Create your views here.
 CACHE_TTL = getattr(settings, 'CACHE_TTL', DEFAULT_TIMEOUT)
@@ -24,6 +25,11 @@ def rants_list(request):
 class RantsListView(ListView):
     modeol = Rant
     paginate_by = 200
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['now'] = timezone.now()
+        return context
 
 """
 def rant_detail(request, rant):
