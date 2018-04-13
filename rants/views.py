@@ -22,9 +22,9 @@ def rants_by_category(request, category):
 def rants_list(request):
     rants = Rant.objects.all()
     return rants
-    
+
 class RantsListView(ListView):
-    modeol = Rant
+    model = Rant
     paginate_by = 200
 
     def get_context_data(self, **kwargs):
