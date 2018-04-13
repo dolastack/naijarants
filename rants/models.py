@@ -30,7 +30,7 @@ class Rant(models.Model):
     updated = models.DateTimeField(auto_now_add=True)
     files = models.FileField(upload_to='file-uploads/%Y/%m/%D/', blank=True )
     #image = models.ImageField( blank=True )
-    objects = RantQuerySet.as_manager()
+    #objects = RantQuerySet.as_manager()
     class Meta:
         ordering = ['-time_created']
     def get_absolute_url(self):

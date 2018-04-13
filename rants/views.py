@@ -22,6 +22,7 @@ def rants_by_category(request, category):
 def rants_list(request):
     rants = Rant.objects.all()
     return rants
+    
 class RantsListView(ListView):
     modeol = Rant
     paginate_by = 200
