@@ -25,7 +25,7 @@ class ArticlesManager(models.Manager):
                 return self.filter(publication_date__gte = time_delta).order_by("-publication_date")
 
 class Article(models.Model):
-    feed = models.ForeignKey(Feed)
+    feed = models.ForeignKey(Feed, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     url = models.URLField()
     description = models.TextField()
