@@ -53,7 +53,7 @@ class Rant(models.Model):
 
 class Comment(models.Model):
     name = models.CharField(max_length=80, default="anonymous")
-    rant = models.ForeignKey(Rant, related_name='comments')
+    rant = models.ForeignKey(Rant, related_name='comments', on_delete=models.CASCADE)
     body = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now_add=True)

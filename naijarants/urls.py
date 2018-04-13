@@ -14,12 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url, include
+from django.urls import path
 from django.contrib import admin
 from django.conf import settings
 from django.views.static import serve
 from django.conf.urls.static import static
 from .views import about
-from rants.views import rants_by_category
+from rants.views import rants_by_category, RantsListView
 
 urlpatterns = [
     url(r'admin/', admin.site.urls),
@@ -27,5 +28,5 @@ urlpatterns = [
     url(r'^rant/', include('rants.urls')),
     url(r'^account/', include('accounts.urls')),
     #url(r'(?P<category>[^/]*)', rants_by_category , name='rants_by_catogory'),
-    url(r'^', include('rssfeed.urls')),
+    url(r'^$', RantsListView.as_view(), name='rants-list' ),
 ]
