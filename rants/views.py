@@ -6,7 +6,7 @@ from django.conf import settings
 from django.core.cache.backends.base import DEFAULT_TIMEOUT
 from .models import Rant
 from .forms import RantForm, CommentForm
-from django.views.generic.list import ListView
+from django.views.generic import ListView, DetailView
 from django.utils import timezone
 
 # Create your views here.
@@ -26,6 +26,7 @@ def rants_list(request):
 class RantsListView(ListView):
     model = Rant
     paginate_by = 200
+    template_name = 'index.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

@@ -28,5 +28,5 @@ urlpatterns = [
     url(r'^rant/', include('rants.urls')),
     url(r'^account/', include('accounts.urls')),
     #url(r'(?P<category>[^/]*)', rants_by_category , name='rants_by_catogory'),
-    url(r'^$', RantsListView.as_view(), name='rants-list' ),
+    url(r'^$', RantsListView.as_view(), name='index' ),
 ]
