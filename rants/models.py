@@ -25,7 +25,7 @@ class Rant(models.Model):
     title = models.CharField(max_length=100)
     body = models.TextField()
     time_created = models.DateTimeField(auto_now=True)
-    author = models.ForeignKey(User , null=True, blank=True)
+    author = models.ForeignKey(User , null=True, blank=True , on_delete=models.CASCADE)
     category = models.CharField(max_length=1, choices=CATIGORIES, default='Everyday Living')
     updated = models.DateTimeField(auto_now_add=True)
     files = models.FileField(upload_to='file-uploads/%Y/%m/%D/', blank=True )

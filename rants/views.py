@@ -6,6 +6,7 @@ from django.conf import settings
 from django.core.cache.backends.base import DEFAULT_TIMEOUT
 from .models import Rant
 from .forms import RantForm, CommentForm
+from django.views.generics.list  import ListView
 
 # Create your views here.
 CACHE_TTL = getattr(settings, 'CACHE_TTL', DEFAULT_TIMEOUT)
@@ -20,6 +21,9 @@ def rants_by_category(request, category):
 def rants_list(request):
     rants = Rant.objects.all()
     return rants
+class RantsListView(ListView):
+    modeol = Rant
+    paginate_by = 200
 
 """
 def rant_detail(request, rant):
