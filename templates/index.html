@@ -32,24 +32,25 @@
 
 
         <div class="col-md-4" >
-          <div class="card h-25 border-warning" style="overflow: scroll;" >
+          <div class="card h-25" >
             <div class="card-header  text-white bg-primary text-center">
               <h2>In the News</h2>
             </div>
+            <div class="card-body  border-warning" style="overflow: scroll;">
 
-            {% autoescape off %}
-           
-
-            {% for entry in news_article_list %}
-              <h4>{{entry.title}}</h4>
-              <p>{{ entry.description | safe }}</p>
-              <p>
-                <a href="{{entry.url}}" target="_blank" class="btn btn-primary">Veiw Details</a>
-              </p>
-            {% endfor %}
+              {% autoescape off %}
+            
+              {% for entry in news_article_list %}
+                <h4>{{entry.title}}</h4>
+                <p>{{ entry.description | safe }}</p>
+                <p>
+                  <a href="{{entry.url}}" target="_blank" class="btn btn-primary">Veiw Details</a>
+                </p>
+              {% endfor %}
+        
       
-    
-            {% endautoescape %}
+              {% endautoescape %}
+            </div>
           </div>
 
         </div>
