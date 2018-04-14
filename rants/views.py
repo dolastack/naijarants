@@ -6,7 +6,7 @@ from django.conf import settings
 from django.core.cache.backends.base import DEFAULT_TIMEOUT
 from .models import Rant
 from .forms import RantForm, CommentForm
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, FormView,TemplateView
 from django.utils import timezone
 from rssfeed.models import Article
 
@@ -23,6 +23,10 @@ def rants_by_category(request, category):
 def rants_list(request):
     rants = Rant.objects.all()
     return rants
+"""
+class IndexView(TemplateView):
+    template_name = 'index.html'
+"""
 
 class RantsListView(ListView):
     model = Rant
@@ -47,25 +51,6 @@ class RantDetailView(DetailView):
         return context
 """
 
-"""
-def rant_detail(request, rant):
-   # rant = get_object_or_404(Rant, title=rant_title, pk=id)
-
-    comments = rant.comments.filter(active=True)
-    if request.method == 'POST':
-        comment_form = CommentForm(data=request.POST)
-        if comment_form.is_valid():
-            new_comment = comment_form.save(commit=False)
-            new_comment.rant = rant
-            new_comment.save()
-    else:
-        comment_form = CommentForm()
-    context = {'rant': rant, 'comments': comments,
-               'comment_form': comment_form}
-    template = "rants/rant_detail.html"
-    return render(request, template, context)
-
-"""
 def rant_detail(request, id,rant_title):
     rant = get_object_or_404(Rant, title=rant_title , pk=id)
 
@@ -98,3 +83,11 @@ def new_rant(request):
         form = RantForm()
     #return render(request, "index.html", {'form': form})
     return render(request, "rants/new_rant.html", {'form': form})
+
+"""
+class NewRantView(FormView):
+    template_name = 'new_rant.html'
+    form_class = RantForm
+
+    def form_valid(self, form):
+"""
