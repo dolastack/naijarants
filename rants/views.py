@@ -28,7 +28,7 @@ class RantsListView(ListView):
     model = Rant
     paginate_by = 200
     template_name = 'index.html'
-    
+    context_object_name = 'rants_list'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

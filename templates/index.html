@@ -13,10 +13,10 @@
         <div class="row">
           <!-- Main jumbotron for a primary marketing message or call to action -->
         
-          {% include "rants/new_rant.html" %}
+         
 
 
-          {% for rant in object_list  %}
+          {% for rant in rants_list  %}
             <div class="col-md-6">
                 <h3>{{rant.title}} </h3>
                 <p>{{ rant.body  | slice:":200" | linebreaks }}</p>
