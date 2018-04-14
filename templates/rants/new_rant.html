@@ -7,7 +7,7 @@
 
 <form method="post" action="{% url 'rants_new_rant' %}" enctype="multipart/form-data" class="font-weight-bold align-text-top align-items-start">
   {% csrf_token %}
-  <table style="width: 100%;">
+  <table>
      {{ form.as_table }}
     <tr>
       <td>&nbsp</td>
