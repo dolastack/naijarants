@@ -31,6 +31,7 @@ class IndexView(TemplateView):
 class RantsListView(ListView):
     model = Rant
     paginate_by = 200
+    page_kwarg = 'page'
     template_name = 'index.html'
     context_object_name = 'rants_list'
 
