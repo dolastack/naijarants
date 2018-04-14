@@ -38,9 +38,9 @@
             </div>
 
             {% autoescape off %}
-            {% for articles in news_article_list  %}
+           
 
-            {% for entry in articles %}
+            {% for entry in news_article_list %}
               <h4>{{entry.title}}</h4>
               <p>{{ entry.description | safe }}</p>
               <p>
@@ -48,7 +48,7 @@
               </p>
             {% endfor %}
       
-      {% endfor %}
+    
             {% endautoescape %}
           </div>
 
