@@ -11,8 +11,22 @@
         <div class="col-xs-12 col-md-8">
 
         <div class="row">
-          <!-- Main jumbotron for a primary marketing message or call to action -->
-        
+              <!-- Main jumbotron for a primary marketing message or call to action -->
+              <div class="jumbotron bg-success" style="width: 100%;">
+                <div class="container">
+                  <!--h1 class="display-3">Naija Rants</h1-->
+                  <h2>Tell the world, what is on your mind.</h2>
+    
+                  <h4>
+                  <a href="{% url 'accounts_login' %}" >Login </a>
+                   or
+                  <a href="{% url 'accounts_new_alias' %}">Create an account! </a>
+                  or
+                  <a href="{% url 'rants_new_rant' %}">Anonymously rant or report an event. </a>
+                </h4>
+    
+                </div>
+              </div> 
          
 
 
