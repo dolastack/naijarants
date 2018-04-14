@@ -21,6 +21,9 @@ a:active {
     background-color: transparent;
     text-decoration: underline;
 }
+input {
+    height: 30px;
+  }
 
 input, textarea{
   width: 100%;
@@ -35,9 +38,7 @@ input, textarea{
 
 }
 
-input {
-  height: 30px;
-}
+
 .required label:after {
   content: "*";
 }
