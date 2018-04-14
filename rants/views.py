@@ -8,6 +8,7 @@ from .models import Rant
 from .forms import RantForm, CommentForm
 from django.views.generic import ListView, DetailView
 from django.utils import timezone
+from rssfeed.models import Article
 
 # Create your views here.
 CACHE_TTL = getattr(settings, 'CACHE_TTL', DEFAULT_TIMEOUT)
@@ -27,11 +28,24 @@ class RantsListView(ListView):
     model = Rant
     paginate_by = 200
     template_name = 'index.html'
+    
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['now'] = timezone.now()
+        context[news_article_list] = Article.objects.articles_after(days=2)
+        return context
+
+"""      
+class RantDetailView(DetailView):
+    model = Rant
+    template_name = 'rant_detail.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['now'] = timezone.now()
         return context
+"""
 
 """
 def rant_detail(request, rant):
