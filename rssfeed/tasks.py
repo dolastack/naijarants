@@ -13,7 +13,6 @@ import redis
 import pickle
 # Create your views here.
 
-current_timezone = timezone.get_current_timezone()
 redis = redis.StrictRedis(host='localhost', port=6379, db=9)
 
 # facebook api
@@ -80,6 +79,8 @@ def feed_update():
 
 def save_article(dfeedData, dfeed):
     """ get articles from feeds and save article to database"""
+    
+    current_timezone = timezone.get_current_timezone()
 
     for entry in dfeedData.entries:
         article = Article()
@@ -95,7 +96,7 @@ def save_article(dfeedData, dfeed):
         loc_dt = timezone.make_aware(utc_dt, current_timezone)
         #dateString = loc_dt.strftime('%Y-%m-%d %H:%M:%S')
         #timezone('US/Eastern').localize(dateString)
-        article.publication_date = loc_dt.strftime('%Y-%m-%d %H:%M:%S')
+        article.publication_date = timezone.make_aware(utc_dt.strftime('%Y-%m-%d %H:%M:%S'), current_timezone)
         article.feed = dfeed
         article.setID()
         article.save()
