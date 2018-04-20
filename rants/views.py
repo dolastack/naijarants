@@ -10,6 +10,7 @@ from django.views.generic import ListView, DetailView, FormView,TemplateView
 from django.utils import timezone
 from rssfeed.models import Article
 
+
 # Create your views here.
 CACHE_TTL = getattr(settings, 'CACHE_TTL', DEFAULT_TIMEOUT)
 

@@ -8,12 +8,12 @@ from pytz import timezone
 from facebook import GraphAPIError
 from celery.task.schedules import crontab
 from celery.decorators import periodic_task
-
+from django.utils import timezone
 import redis
 import pickle
 # Create your views here.
 
-
+current_timezone = timezone.get_current_timezone()
 redis = redis.StrictRedis(host='localhost', port=6379, db=9)
 
 # facebook api
@@ -91,8 +91,8 @@ def save_article(dfeedData, dfeed):
         eastern = timezone('US/Eastern')
         utc_dt = datetime.datetime(*(entry.published_parsed[0:6]), tzinfo=utc)
         #timezone naive datetime
-        loc_dt = utc_dt.astimezone(eastern)
-
+        #loc_dt = utc_dt.astimezone(eastern)
+        loc_dt = timezone.make_aware(utc_dt, current_timezone)
         #dateString = loc_dt.strftime('%Y-%m-%d %H:%M:%S')
         #timezone('US/Eastern').localize(dateString)
         article.publication_date = loc_dt.strftime('%Y-%m-%d %H:%M:%S')

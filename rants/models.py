@@ -3,9 +3,9 @@ from django.contrib.auth.models import User
 from django.contrib.auth.models import AnonymousUser
 from django.core.files.storage import FileSystemStorage
 from django.urls import reverse, reverse_lazy
+from django.utils import timezone
 # Create your models here.
 
-#fs = FileSystemStorage(location='file-uploads/')
 
 class RantQuerySet(models.QuerySet):
     def rant(self, dtitle):
