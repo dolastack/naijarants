@@ -5,7 +5,18 @@ from django.utils.translation import gettext_lazy as _
 from .models import Rant, Comment
 
 class RantForm(ModelForm):
-    required_css_class = 'required'
+   # required_css_class = 'required'
+    title = forms.CharField( widget=forms.TextInput(
+        attrs = {
+            "class" : "form-control",
+        }
+    ))
+    body = forms.CharField(widget=forms.Textarea(
+        attrs = {
+            "class": "form-control",
+        }
+    ))
+
     class Meta:
         model = Rant
         fields = ("title", "body", "files", "category")
