@@ -96,7 +96,8 @@ def save_article(dfeedData, dfeed):
         loc_dt = timezone.make_aware(utc_dt, current_timezone)
         #dateString = loc_dt.strftime('%Y-%m-%d %H:%M:%S')
         #timezone('US/Eastern').localize(dateString)
-        article.publication_date = timezone.make_aware(utc_dt.strftime('%Y-%m-%d %H:%M:%S'), current_timezone)
+        naive_time = utc_dt.strftime('%Y-%m-%d %H:%M:%S')
+        article.publication_date = timezone.make_aware(naive_time, current_timezone)
         article.feed = dfeed
         article.setID()
         article.save()
