@@ -5,7 +5,7 @@
 
 <div class="container">
 
-<form method="post" action="{% url 'rants_new_rant' %}" enctype="multipart/form-data" class="font-weight-bold align-text-top align-items-start">
+<form method="post" action="{% url 'rants_new_rant' %}" enctype="multipart/form-data">
   {% csrf_token %}
   <table>
      {{ form.as_table }}
