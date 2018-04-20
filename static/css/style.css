@@ -23,7 +23,7 @@ a:active {
 }
 
 input, textarea{
-  
+  align-self: center;
   padding: 5px!important;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
