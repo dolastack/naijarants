@@ -3,7 +3,7 @@
 {% block content %}
   
 
-<div class="container">
+<div class="container" style="width: 50%; align-self: center;">
 
 <form method="post" action="{% url 'rants_new_rant' %}" enctype="multipart/form-data" class="font-weight-bold align-text-top align-items-start">
   {% csrf_token %}
