@@ -20,7 +20,8 @@ class RantForm(ModelForm):
     ))
     category = forms.CharField(widget=forms.Select(
         attrs = {
-            "class" : "dropdown-menu"
+            "class" : "dropdown-menu",
+            "aria-labelledby": "Categories"
         }
     )) 
     files = forms.FileField(widget=forms.FileInput(
@@ -31,9 +32,10 @@ class RantForm(ModelForm):
     class Meta:
         model = Rant
         fields = ("title", "body", "files", "category")
-        labels = { 'body' : _(''),
-                   'title': _('')
+        labels = { 'body' : _('Rant'),
+                   'title': _('Title')
                    }
+
 class CommentForm(ModelForm):
     required_css_class = 'required'
     name = forms.CharField( widget=forms.TextInput(
