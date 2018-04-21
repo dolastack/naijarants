@@ -22,19 +22,4 @@ a:active {
     text-decoration: underline;
 }
 
-input, textarea{
-  
-  padding: 5px!important;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing:  border-box;
-  border-radius: 3px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: rgb(169,169,169)
-}
 
-
-.required label:after {
-  content: "*";
-}
