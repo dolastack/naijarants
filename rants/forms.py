@@ -25,7 +25,7 @@ class RantForm(ModelForm):
     ), choices=CATIGORIES) """
     files = forms.FileField(widget=forms.FileInput(
         attrs = {
-            "class" : "custom-file-input"
+            "class" : "custom-file"
         }
     ))
     class Meta:
