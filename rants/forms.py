@@ -9,13 +9,13 @@ class RantForm(ModelForm):
     title = forms.CharField( widget=forms.TextInput(
         attrs = {
             "class" : "form-control",
-            "placeholder" : "Title ..."
+           
         }
     ))
     body = forms.CharField(widget=forms.Textarea(
         attrs = {
             "class": "form-control",
-            "placeholder" : "Write ..."
+           
         }
     ))
     """ category = forms.CharField(widget=forms.Select(
@@ -23,7 +23,11 @@ class RantForm(ModelForm):
             "class" : "dropdown-item"
         }
     ), choices=CATIGORIES) """
-
+    files = forms.FileField(widget=forms.FileInput(
+        attrs = {
+            "class" : "custom-file-input"
+        }
+    ))
     class Meta:
         model = Rant
         fields = ("title", "body", "files", "category")
