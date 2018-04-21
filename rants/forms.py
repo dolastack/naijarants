@@ -31,8 +31,8 @@ class RantForm(ModelForm):
     class Meta:
         model = Rant
         fields = ("title", "body", "files", "category")
-        labels = { 'body' : _('Rant'),
-                   'title': _('Title')
+        labels = { 'body' : _(''),
+                   'title': _('')
                    }
 class CommentForm(ModelForm):
     required_css_class = 'required'
