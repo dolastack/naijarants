@@ -30,7 +30,7 @@ class CommentForm(ModelForm):
             "class" : "form-control",
         }
     ))
-    body = forms.CharField( widget=forms.TextInput(
+    body = forms.CharField( widget=forms.Textarea(
         attrs = {
             "class" : "form-control",
         }
