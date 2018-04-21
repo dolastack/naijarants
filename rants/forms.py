@@ -9,18 +9,20 @@ class RantForm(ModelForm):
     title = forms.CharField( widget=forms.TextInput(
         attrs = {
             "class" : "form-control",
+            "placeholder" : "Title ..."
         }
     ))
     body = forms.CharField(widget=forms.Textarea(
         attrs = {
             "class": "form-control",
+            "placeholder" : "Write ..."
         }
     ))
-    category = forms.CharField(widget=forms.Select(
+    """ category = forms.CharField(widget=forms.Select(
         attrs = {
             "class" : "dropdown-item"
         }
-    ))
+    ), choices=CATIGORIES) """
 
     class Meta:
         model = Rant
