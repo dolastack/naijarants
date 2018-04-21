@@ -3,7 +3,7 @@
 {% block content %}
   
 
-<div class="container" id="newrantcontent">
+<div  id="newrantcontent">
 
 <form method="post" action="{% url 'rants_new_rant' %}" enctype="multipart/form-data">
   {% csrf_token %}
