@@ -18,11 +18,11 @@ class RantForm(ModelForm):
            
         }
     ))
-    """ category = forms.CharField(widget=forms.Select(
+    category = forms.CharField(widget=forms.Select(
         attrs = {
-            "class" : "dropdown-item"
+            "class" : "dropdown-menu"
         }
-    ), choices=CATIGORIES) """
+    )) 
     files = forms.FileField(widget=forms.FileInput(
         attrs = {
             "class" : "custom-file"
