@@ -16,6 +16,11 @@ class RantForm(ModelForm):
             "class": "form-control",
         }
     ))
+    category = forms.CharField(widget=forms.Select(
+        attrs = {
+            "class" : "dropdown"
+        }
+    ))
 
     class Meta:
         model = Rant
