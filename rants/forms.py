@@ -25,6 +25,16 @@ class RantForm(ModelForm):
                    }
 class CommentForm(ModelForm):
     required_css_class = 'required'
+    name = forms.CharField( widget=forms.TextInput(
+        attrs = {
+            "class" : "form-control",
+        }
+    ))
+    body = forms.CharField( widget=forms.TextInput(
+        attrs = {
+            "class" : "form-control",
+        }
+    ))
     class Meta:
         model = Comment
         fields = ('name', 'body')
