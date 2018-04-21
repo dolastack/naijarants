@@ -8,7 +8,7 @@
 <form method="post" action="{% url 'rants_new_rant' %}" enctype="multipart/form-data">
   {% csrf_token %}
   <table>
-     {{ form.as_table }}
+     {{ form.post }}
     <tr>
       <td>&nbsp</td>
       <td><button type="submit" class="btn-primary btn-lg">Create Rant</button></td>
