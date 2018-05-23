@@ -8,7 +8,7 @@ from .models import Rant
 from .forms import RantForm, CommentForm
 from django.views.generic import ListView, DetailView, FormView,TemplateView
 from django.utils import timezone
-from rssfeed.models import Article
+from rssfeed.models import Article, Feed
 
 
 # Create your views here.
@@ -39,7 +39,8 @@ class RantsListView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['now'] = timezone.now()
-        context['news_article_list'] = Article.objects.articles_after(days=2)
+        context['news_article_list'] = Article.objects.articles_after(days=30)
+        print(context)
         return context
 
 """      

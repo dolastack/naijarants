@@ -55,7 +55,7 @@
               {% autoescape off %}
             
               {% for entry in news_article_list %}
-                <h4>{{entry.title}}</h4>
+                <h4>{{ entry.title }}</h4>
                 <p>{{ entry.description | safe }}</p>
                 <p>
                   <a href="{{entry.url}}" target="_blank" class="btn btn-primary">Veiw Details</a>
