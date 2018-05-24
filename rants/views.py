@@ -39,8 +39,7 @@ class RantsListView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['now'] = timezone.now()
-        context['news_article_list'] = Article.objects.articles_after(days=30)
-        print(context)
+        context['news_article_list'] = Article.objects.articles_after(days=30)        
         return context
 
 """      
