@@ -27,14 +27,17 @@
     
                 </div>
                
-             
+             </div>
               <form>
-              <div class="form-group">
-               <label for="exampleFormControlTextarea1">Example textarea</label>
-                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                  </div>
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Example textarea</label>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  <label for="exampleFormControlFile1">Upload a file or picture</label>
+                  <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                </div>
+
               </form>
-            </div>
+            
 
           {% for rant in rants_list  %}
             <div class="col-md-6">
