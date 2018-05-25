@@ -19,14 +19,16 @@
                 <div class="form-group mt-1">
                   <!--label for="exampleFormControlTextarea1">Example textarea</label-->
                   <textarea class="form-control" id="exampleFormControlTextarea1" rows="8" placeholder="Rant on.."></textarea>
-                  <label for="exampleFormControlFile1">Upload a file or picture</label>
+                  <label for="exampleFormControlFile1">Upload a file, picture or Video</label>
                   <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                  <label for="exampleFormControlFile2">Upload a file, picture or Video </label>
+                  <input type="file" class="form-control-file" id="exampleFormControlFile2">
                   
-                   <button type="submit" class="btn btn-primary">Post</button>
+                   <button type="submit" class="btn btn-primary  btn-lg mt-1">Post</button>
                 </div>
 
-              </form>       
-            </div>
+              </form>    <!-- Forms end -->   
+            </div> <!--Card end -->
             <hr/>
           {% for rant in rants_list  %}
             <div class="col-md-6">
