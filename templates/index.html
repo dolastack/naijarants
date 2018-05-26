@@ -15,7 +15,12 @@
               <div class="card-header bg-success font-weight-bold text-center">
                 Sup? What's going on?
               </div>
-              <form style="width: 100%;">
+              <form method="post" style="width: 100%;">
+                 {% csrf_token %}
+
+                 {% for hidden_field in form.hidden_fields %}
+                 {{ hidden_field }}
+                 {% endfor %}
                 <div class="form-group mt-1">
                   <!--label for="exampleFormControlTextarea1">Example textarea</label-->
                   <textarea class="form-control" id="exampleFormControlTextarea1" rows="8" placeholder="Rant on.."></textarea>
