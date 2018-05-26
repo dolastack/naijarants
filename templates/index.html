@@ -15,14 +15,16 @@
               <div class="card-header bg-success font-weight-bold text-center">
                 Sup? What's going on?
               </div>
-              <form method="post" style="width: 100%;">
+              <form action="" method="post" style="width: 100%;">
                  {% csrf_token %}
 
                  {% for hidden_field in form.hidden_fields %}
                  {{ hidden_field }}
                  {% endfor %}
-
+                 
+               
                 <div class="form-group mt-1">
+                 <input type="text" class="form-control"  placeholder="Title">
                   <!--label for="exampleFormControlTextarea1">Example textarea</label-->
                   <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" placeholder="Rant on ..."></textarea>
                   <label for="exampleFormControlFile1">Upload a file, picture or Video</label>
