@@ -81,7 +81,7 @@ def feed_update():
 def save_article(dfeedData, dfeed):
     """ get articles from feeds and save article to database"""
     
-    current_timezone = timezone.get_current_timezone()
+    #current_timezone = timezone.get_current_timezone()
 
     for entry in dfeedData.entries:
         article = Article()
@@ -93,11 +93,11 @@ def save_article(dfeedData, dfeed):
         #eastern = timezone('US/Eastern')
         utc_dt = datetime.datetime(*(entry.published_parsed[0:6]))
         #timezone naive datetime
-        loc_dt = utc_dt.astimezone(current_timezone)
+        #loc_dt = utc_dt.astimezone(current_timezone)
 
         #dateString = loc_dt.strftime('%Y-%m-%d %H:%M:%S')
         #timezone('US/Eastern').localize(dateString)
-        article.publication_date = loc_dt.strftime('%Y-%m-%d %H:%M:%S')
+        article.publication_date = utc_dt.strftime('%Y-%m-%d %H:%M:%S')
         article.feed = dfeed
         article.setID()
         article.save()
