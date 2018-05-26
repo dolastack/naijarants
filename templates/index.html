@@ -21,11 +21,12 @@
                  {% for hidden_field in form.hidden_fields %}
                  {{ hidden_field }}
                  {% endfor %}
+                 
                 <div class="form-group mt-1">
                   <!--label for="exampleFormControlTextarea1">Example textarea</label-->
                   <textarea class="form-control" id="exampleFormControlTextarea1" rows="8" placeholder="Rant on.."></textarea>
                   <label for="exampleFormControlFile1">Upload a file, picture or Video</label>
-                  <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                  <input type="file" class="form-control-file" id="exampleFormControlFile1" multiple>
                   
                   <label for="inputState">Category</label>
                    <select id="inputState" class="form-control">
