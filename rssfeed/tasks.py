@@ -3,7 +3,7 @@ from .models import  Article, Feed
 import feedparser, datetime,facebook
 import datetime
 from django.db.models.signals import post_save
-from pytz import timezone
+#from pytz import timezone
 
 from facebook import GraphAPIError
 from celery.task.schedules import crontab
@@ -48,9 +48,10 @@ def get_latest_article(sender,  **kwargs):
 #post save signal connect
 #post_save.connect(get_latest_article, sender=Article)
 
+"""
 #@periodic_task(run_every=(crontab( minute="*/18")))
 def post_to_facebook():
-    """Post new articles to facebook"""
+  ""Post new articles to facebook""
 
     for i in range(5):
         if redis.llen('articles') > 0:
@@ -62,7 +63,7 @@ def post_to_facebook():
                 status = api.put_wall_post(article.title, attachment )
             except facebook.GraphAPIError as er:
                 print("There is a problem ", str(er))
-
+"""
 
 @periodic_task(run_every=(crontab(minute="*/7")))
 def feed_update():
@@ -88,16 +89,15 @@ def save_article(dfeedData, dfeed):
         article.url = entry.link
         article.description = entry.description
 
-        utc = timezone('UTC')
-        eastern = timezone('US/Eastern')
-        utc_dt = datetime.datetime(*(entry.published_parsed[0:6]), tzinfo=utc)
+        #utc = timezone('UTC')
+        #eastern = timezone('US/Eastern')
+        utc_dt = datetime.datetime(*(entry.published_parsed[0:6]))
         #timezone naive datetime
-        #loc_dt = utc_dt.astimezone(eastern)
-        loc_dt = timezone.make_aware(utc_dt, current_timezone)
+        loc_dt = utc_dt.astimezone(current_timezone)
+
         #dateString = loc_dt.strftime('%Y-%m-%d %H:%M:%S')
         #timezone('US/Eastern').localize(dateString)
-        naive_time = utc_dt.strftime('%Y-%m-%d %H:%M:%S')
-        article.publication_date = timezone.make_aware(naive_time, current_timezone)
+        article.publication_date = loc_dt.strftime('%Y-%m-%d %H:%M:%S')
         article.feed = dfeed
         article.setID()
         article.save()
