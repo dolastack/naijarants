@@ -17,27 +17,24 @@
               </div>
               <form action="" method="post" style="width: 100%;">
                  {% csrf_token %}
-
-                 {% for hidden_field in form.hidden_fields %}
-                 {{ hidden_field }}
-                 {% endfor %}
-                 
                
                 <div class="form-group mt-1">
-                 <input type="text" class="form-control"  placeholder="Title" name="title">
+                 <input type="text" class="form-control"  placeholder="Title" id="id_title" name="title">
                   <!--label for="exampleFormControlTextarea1">Example textarea</label-->
-                  <textarea class="form-control mt-1" id="exampleFormControlTextarea1" rows="10" placeholder="Rant on ..." name="body"></textarea>
-                  <label for="exampleFormControlFile1">Upload a file, picture or Video</label>
-                  <input type="file" class="form-control-file" id="exampleFormControlFile1" name="files">
+                  <textarea class="form-control mt-1" id="exampleFormControlTextarea1" rows="10" placeholder="Rant on ..." id="id_name"
+                   name="body"> </textarea>
 
-                  <label for="inputState">Category</label>
-                   <select id="inputState" class="form-control" name="category">
+                  <label for="id_files">Upload a file, picture or Video</label>
+                  <input type="file" class="form-control-file" id="id_files" id="id_files" name="files">
+
+                  <label for="id_category">Category</label>
+                   <select id="id_category" class="form-control" name="category">
                     <option selected>Choose...</option>
                     <option>Religion</option>
                     <option>Politics</option>
                     <option>Relationship</option>
                   </select>  
-                   <button type="submit" class="btn btn-primary  btn-lg mt-1">Post</button>
+                  <button type="submit" class="btn btn-primary  btn-lg mt-1">Post</button>
                 </div>
               </form>    <!-- Forms end -->   
             
@@ -45,13 +42,10 @@
              <h4 class="display-3 text-center">Recent Posts </h4>     
             </div> <!--Card end -->      
          
-         <div class="card border-0 mb-2" style="width: 100%;">
-              <div class="card-header bg-success font-weight-bold text-center">
-                Sup? What's going on?
-              </div>
+  
            {% for rant in rants_list  %}
             <div class="col-md-6">
-                <h3>{{rant.title}} </h3>
+                <h3>{{rant.title}}</h3>
                 <p>{{ rant.body  | slice:":200" | linebreaks }}</p>
                 <p>
                   <!--a href="{% url 'rant_detail' id=rant.id rant_title=rant.title %}" class="btn btn-primary">Full Details</a -->
@@ -60,7 +54,7 @@
                 </p>
            </div>
           {% endfor %}
-         </div> <!--Card end --> 
+         
         </div> <!-- End col8 row -->
         </div> <!-- col-xs-12 col-sm-8 -->
 
