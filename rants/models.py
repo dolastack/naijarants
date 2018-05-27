@@ -37,7 +37,7 @@ class Rant(models.Model):
         return reverse('rant_detail', args=[self.id, self.title])
     
     def get_social_url(self):
-        url = "http://naijarants.com" + self.get_absolute_url()
+        url = "https://naijarants.com" + self.get_absolute_url()
         return url
     def get_tweet_text(self):
         #url = self.get_social_url().replace(" ", '%20')
