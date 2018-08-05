@@ -16,10 +16,13 @@ import pickle
 
 redis = redis.StrictRedis(host='localhost', port=6379, db=9)
 
+#"access_token" : "EAAL3F6fnlNkBAMXksivgtM6XFSZBcbmHRJUG3MogBPz2hsuZAPXaG0ky8C1TbxZAJZAOCgT5V2hFocJlWaBW6VRXiYmEt4twneETXeZCuPvbJxNrhNyZAHKHjNR3upSBU3fmHZAQ3TZA3Ky06HjZAoAy1zHpzYewlM20ZD"   # Step 3
+
 # facebook api
 cfg = {
 "page_id"      : "216809822168608",  # Step 1
-"access_token" : "EAAL3F6fnlNkBAMXksivgtM6XFSZBcbmHRJUG3MogBPz2hsuZAPXaG0ky8C1TbxZAJZAOCgT5V2hFocJlWaBW6VRXiYmEt4twneETXeZCuPvbJxNrhNyZAHKHjNR3upSBU3fmHZAQ3TZA3Ky06HjZAoAy1zHpzYewlM20ZD"   # Step 3
+
+ "access_token" : "EAAL3F6fnlNkBAOqZCZCLmFitv0lOQ4ZAdr8OWyHq4jzwoXVFVgwQ9ZB9VutLVPBKMvPoC8LA86B9F30AdRHZAdLNEkCx60DPtEBdZBunxQRsZCSX4ZBPa0NGWAeH0P4ZB4THpOhDlaIhAuCT00XgaEeju3PRUsG7QF6fCaQOoH4ZAlZCQZDZD"
 }
 
 DISPLAYED_ARTICLES = []
