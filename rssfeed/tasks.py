@@ -3,7 +3,7 @@ from .models import  Article, Feed
 import feedparser, datetime,facebook
 import datetime
 from django.db.models.signals import post_save
-#from pytz import timezone
+
 
 from facebook import GraphAPIError
 from celery.task.schedules import crontab
@@ -11,6 +11,7 @@ from celery.decorators import periodic_task
 from django.utils import timezone
 import redis
 import pickle
+
 # Create your views here.
 
 redis = redis.StrictRedis(host='localhost', port=6379, db=9)
@@ -48,11 +49,10 @@ def get_latest_article(sender,  **kwargs):
 #post save signal connect
 #post_save.connect(get_latest_article, sender=Article)
 
-"""
-#@periodic_task(run_every=(crontab( minute="*/18")))
-def post_to_facebook():
-  ""Post new articles to facebook""
 
+@periodic_task(run_every=(crontab( minute="*/18")))
+def post_to_facebook():
+    """Post new articles to facebook"""
     for i in range(5):
         if redis.llen('articles') > 0:
 
@@ -63,7 +63,7 @@ def post_to_facebook():
                 status = api.put_wall_post(article.title, attachment )
             except facebook.GraphAPIError as er:
                 print("There is a problem ", str(er))
-"""
+
 
 @periodic_task(run_every=(crontab(minute="*/7")))
 def feed_update():
