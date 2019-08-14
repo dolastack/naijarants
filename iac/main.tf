@@ -11,7 +11,7 @@ resource "aws_instance" "naijarant"{
 
 	associate_public_ip_address = true
 	provisioner "local-exec"  {	
-		command = "sleep 120; ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -u ubuntu --private-key ../aws-key.pem -i '${aws_instance.naijarant.public_ip},' ../setup.yml"
+		command = "sleep 120; ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -e ansible_python_interpreter=/usr/bin/python3 -u ubuntu --private-key ../aws-key.pem -i '${aws_instance.naijarant.public_ip},' ../setup.yml"
 	}
 }
 
