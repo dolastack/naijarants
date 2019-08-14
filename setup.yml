@@ -4,7 +4,7 @@
   tasks:
     - name: Install packages
       apt:
-        name: "{[ packages }}"
+        name: "{{ packages }}"
       vars:
         packages:
         - python3
