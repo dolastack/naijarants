@@ -5,6 +5,8 @@
     - name: update ubuntu
       apt:
         upgrade: dist
+        update_cache: yes
+        
     - name: Install packages
       apt:
         name: "{{ packages }}"
