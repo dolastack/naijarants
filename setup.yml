@@ -6,7 +6,7 @@
       apt:
         upgrade: dist
         update_cache: yes
-        
+
     - name: Install packages
       apt:
         name: "{{ packages }}"
@@ -17,7 +17,3 @@
         - python3-pip
         - python3-virtualenv
         update_cache: yes
-        
-    - name:
-      pip:
-        requirements: requirements.txt   
