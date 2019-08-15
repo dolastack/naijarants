@@ -16,4 +16,10 @@
         - nginx
         - python3-pip
         - python3-virtualenv
+        - postgresql
+        - postgresql-contrib
         update_cache: yes
+    - name: pull code
+      git:
+        repo: 'https://github.com/dolastack/naijarants.git'
+        dest: /opt
