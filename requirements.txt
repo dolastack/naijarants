@@ -55,7 +55,7 @@ requests-oauthlib==0.8.0
 six==1.11.0
 social-auth-core==1.5.0
 sqlparse==0.3.1
-Twisted==17.9.0
+Twisted==22.1.0
 TwitterAPI==2.4.6
 txaio==2.8.2
 urllib3==1.22
